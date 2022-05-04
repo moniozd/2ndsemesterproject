@@ -3,12 +3,12 @@ package com.example.demo.model;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-public class AccessoryRental extends IDs {
-    private Rental rental;
-    public Accessory accessory;
+public class AccessoryRentalModel extends IdModel {
+    private RentalModel rental;
+    public AccessoryModel accessory;
     private int amountOfAccessories;
 
-    public AccessoryRental(Rental rental, Accessory accessory, int amountOfAccessories) {
+    public AccessoryRentalModel(RentalModel rental, AccessoryModel accessory, int amountOfAccessories) {
         this.rental = rental;
         this.accessory = accessory;
         this.amountOfAccessories = amountOfAccessories;

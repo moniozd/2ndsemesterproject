@@ -1,6 +1,6 @@
 package com.example.demo.model;
 
-public class IDs {
+public class IdModel {
     int id;
 
     public int getId() {

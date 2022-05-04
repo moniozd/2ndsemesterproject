@@ -6,7 +6,7 @@ import java.time.temporal.ChronoUnit;
 import lombok.Data;
 
 @Data
-public class Accessory extends IDs {
+public class AccessoryModel extends IdModel {
     private double price;
     private String name;
 

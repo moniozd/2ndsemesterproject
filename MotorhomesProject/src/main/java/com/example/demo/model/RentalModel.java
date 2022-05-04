@@ -5,9 +5,9 @@ import java.time.LocalDate;
 import lombok.Data;
 
 @Data
-public class Rental extends IDs {
-    private Customer customer;
-    private Motorhome motorhome;
+public class RentalModel extends IdModel {
+    private CustomerModel customer;
+    private MotorhomeModel motorhome;
     private int pickUpDistance;
     private int deliveryDistance;
     private int kilometersStart;
