@@ -10,6 +10,7 @@ public class Accessory extends IDs {
     private double price;
     private String name;
 
+
     public double getRentalPriceByDays(int days) {
         return (price * days);
     }
