@@ -5,7 +5,11 @@ import java.time.temporal.ChronoUnit;
 
 import lombok.Data;
 
+import javax.persistence.Entity;
+
+
 @Data
+@Entity
 public class AccessoryModel extends IdModel {
     private double price;
     private String name;

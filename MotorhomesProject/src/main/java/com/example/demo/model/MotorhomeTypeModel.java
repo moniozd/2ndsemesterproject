@@ -1,5 +1,8 @@
 package com.example.demo.model;
 
+import javax.persistence.Entity;
+
+@Entity
 public class MotorhomeTypeModel extends IdModel {
     private String name;
     private int numberOfBeds;

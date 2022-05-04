@@ -1,8 +1,10 @@
 package com.example.demo.model;
 
+import javax.persistence.Entity;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
+@Entity
 public class AccessoryRentalModel extends IdModel {
     private RentalModel rental;
     public AccessoryModel accessory;

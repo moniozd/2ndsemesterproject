@@ -4,6 +4,9 @@ import java.time.LocalDate;
 
 import lombok.Data;
 
+import javax.persistence.Entity;
+
+@Entity
 @Data
 public class RentalModel extends IdModel {
     private CustomerModel customer;
