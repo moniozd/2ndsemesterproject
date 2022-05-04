@@ -10,6 +10,7 @@ public class AccessoryModel extends IdModel {
     private double price;
     private String name;
 
+
     public double getRentalPriceByDays(int days) {
         return (price * days);
     }
