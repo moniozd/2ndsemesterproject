@@ -4,11 +4,11 @@
 }
 body {
     margin: 0;
-    font-family: 'Segoe UI';
+    font-family: Optima, sans-serif;;
 }
 
 h1 {
-    font-family: "Helvetica Neue", Helvetica, Arial, SansSerif, sans-serif;
+    font-family: Optima, sans-serif;
     font-size: large;
     line-height: 85%;
 }
@@ -36,7 +36,7 @@ ul#nav-bar {
 }
 
 ul#nav-bar li a {
-    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-family: Optima, sans-serif;
     /*float: right;*/
     display: block;
     color: black;
