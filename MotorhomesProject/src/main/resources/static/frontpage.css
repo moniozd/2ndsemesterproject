@@ -14,9 +14,12 @@ h1 {
 }
 
 a#title {
+    text-align: left;
     list-style: none;
     text-decoration: none;
     color: black;
+    padding-right: 180px;
+    padding-top: 9px;
 }
 
 .table {
@@ -33,7 +36,7 @@ ul#nav-bar {
 }
 
 ul#nav-bar li a {
-    font-family: 'Segoe UI';
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
     /*float: right;*/
     display: block;
     color: black;
@@ -47,12 +50,12 @@ ul#nav-bar li a {
 ul#nav-bar li {
     display: inline-block;
     float: left;
-    list-style-type: none;
+    margin-right: 30px;
 }
 
 ul#nav-bar li a:hover {
     background-color: #FFFFFF;
-    color: #002366;
+    color: cornflowerblue;
     animation: myGlowAnimation;
     animation-duration: 3s;
     animation-iteration-count: infinite;
@@ -84,6 +87,12 @@ div#footer {
     min-height: 100%;
     position: relative;
 }
+    header{
+        display: flex;
+        justify-content: flex-end;
+
+}
+
 .footer-table {
     padding: 0;
     background-color:#FFFFFF;
@@ -94,6 +103,7 @@ div#footer {
         /*flex-wrap: nowrap;*/
         /*height: 200px;*/
 }
+/*socialmedia footer design*/
 .footer-table .social {
     text-align:center;
     padding: 22px;
@@ -166,7 +176,7 @@ ul#footer-bar li {
     margin: 0;
     border: none;
     background: white;
-    font-family: 'Segoe UI'
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
 }
 .search-button {
     cursor: pointer;
