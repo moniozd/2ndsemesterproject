@@ -4,7 +4,7 @@
 }
 body {
     margin: 0;
-    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    font-family: Gill Sans, sans-serif;
 }
 h1 {
     font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
@@ -35,7 +35,7 @@ ul#nav-bar {
 }
 
 ul#nav-bar li a {
-    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    font-family: Gill Sans, sans-serif;
     /*float: right;*/
     display: block;
     color: black;
