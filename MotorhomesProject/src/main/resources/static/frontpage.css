@@ -6,9 +6,8 @@ body {
     margin: 0;
     font-family: Optima, sans-serif;;
 }
-
 h1 {
-    font-family: Optima, sans-serif;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
     font-size: large;
     line-height: 85%;
 }
@@ -36,7 +35,7 @@ ul#nav-bar {
 }
 
 ul#nav-bar li a {
-    font-family: Optima, sans-serif;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
     /*float: right;*/
     display: block;
     color: black;
@@ -176,7 +175,7 @@ ul#footer-bar li {
     margin: 0;
     border: none;
     background: white;
-    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif
 }
 .search-button {
     cursor: pointer;
