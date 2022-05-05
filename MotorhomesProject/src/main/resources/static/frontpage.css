@@ -4,7 +4,7 @@
 }
 body {
     margin: 0;
-    font-family: Optima, sans-serif;;
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
 }
 h1 {
     font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
@@ -35,7 +35,7 @@ ul#nav-bar {
 }
 
 ul#nav-bar li a {
-    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
     /*float: right;*/
     display: block;
     color: black;
@@ -175,7 +175,7 @@ ul#footer-bar li {
     margin: 0;
     border: none;
     background: white;
-    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
 }
 .search-button {
     cursor: pointer;
