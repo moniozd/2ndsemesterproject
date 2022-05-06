@@ -6,10 +6,17 @@ body {
     margin: 0;
     font-family: Gill Sans, sans-serif;
 }
+/*designing headers*/
 h1 {
     font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
     font-size: large;
     line-height: 85%;
+}
+h2{
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-size:35px;
+    text-align: center;
+
 }
 
 a#title {
@@ -20,12 +27,47 @@ a#title {
     padding-right: 180px;
     padding-top: 9px;
 }
-
+/*design of gallery*/
+.box-container{
+display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.p-picture{
+    max-height: 350px;
+    padding:30px;
+}
+.buy-now-bt{
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+.buy-now-bt:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+.buy-now-bt:active{
+    transform: translateY(-1px);
+}
 .table {
     display: table;
     margin: 0 auto;
 }
 
+/*navigtion bar*/
 ul#nav-bar {
     list-style-type: none;
     padding: 0px;
@@ -60,10 +102,11 @@ ul#nav-bar li a:hover {
     animation-iteration-count: infinite;
 }
 
-@keyframes myGlowAnimation {
-    50% {text-shadow: 0px 0px 10px yellow}
+/*@keyframes myGlowAnimation {*/
+/*    50% {text-shadow: 0px 0px 10px yellow}*/
 
-}
+/*}*/
+
 
 div#front_page_picture_div {
     margin: 0;
@@ -75,11 +118,12 @@ div#front_page_picture_div {
 #front_page_picture {
     width: 100%;
 }
-
+/*designing footer*/
 div#footer {
+    position: relative;
     height: 100px;
     padding: 0;
-    margin: 0;
+    bottom: 0;
     text-align: center;
 }
 .wrapper {
@@ -196,24 +240,25 @@ ul#footer-bar li {
 /*    min-width: 60px;*/
 /*}*/
 
-/* Animation for picture */
-#front_page_picture {
-    position: absolute;
-    /*z-index: 0;*/
-    /*animation: myOpacity;*/
-    animation-play-state: paused;
-    animation-iteration-count: infinite;
-    animation-delay: 5s;
-    animation-timing-function: ease;
-    animation-duration: 7s;
-}
+/*!* Animation for picture *!*/
+/*#front_page_picture {*/
+/*    position: absolute;*/
+/*    !*z-index: 0;*!*/
+/*    !*animation: myOpacity;*!*/
+/*    animation-play-state: paused;*/
+/*    animation-iteration-count: infinite;*/
+/*    animation-delay: 5s;*/
+/*    animation-timing-function: ease;*/
+/*    animation-duration: 7s;*/
+/*}*/
 
 #front_page_picture_day {
     width: 100%;
 }
 
-/*Animation method for opacity*/
-@keyframes myOpacity{
-    50%{opacity: 0;}
-}
+/*!*Animation method for opacity*!*/
+/*@keyframes myOpacity{*/
+/*    50%{opacity: 0;}*/
+/*}*/
+
 
