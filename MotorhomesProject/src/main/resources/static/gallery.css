@@ -7,6 +7,10 @@ body {
     margin: 0;
     font-family: Gill Sans, sans-serif;
 }
+.accessories{
+    position: relative;
+    flex-direction: column;
+}
 /*design of gallery*/
 .box-container{
     display: flex;
@@ -18,7 +22,7 @@ body {
     max-height: 350px;
     padding:30px;
 }
-.buy-now-bt{
+.book-now-bt{
     padding: 1.3em 3em;
     font-size: 12px;
     text-transform: uppercase;
@@ -33,13 +37,13 @@ body {
     cursor: pointer;
     outline: none;
 }
-.buy-now-bt:hover {
+.book-now-bt:hover {
     background-color: #2EE59D;
     box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
     color: #fff;
     transform: translateY(-7px);
 }
-.buy-now-bt:active{
+.book-now-bt:active{
     transform: translateY(-1px);
 }
 .table {
