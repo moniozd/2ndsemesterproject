@@ -1,0 +1,91 @@
+/*Puts border-box on everything*/
+* {
+    box-sizing: border-box;
+}
+/*Makes the line height of all p tags 1.5*/
+p {
+    line-height: 1.5;
+}
+/*Makes all h2 tags all caps*/
+h2 {
+    text-transform: uppercase;
+}
+
+/*Makes all h3 tags align in the center with 20px padding on the bottom*/
+h3 {
+    padding-bottom: 20px;
+    text-align: center;
+}
+/*Makes the background color of the 3 column section white*/
+div#page-section {
+    background-color: white;
+}
+/*gives the title 60px padding on the top*/
+div#padding-1 {
+    height: 60px;
+}
+/*Customizing the h2 tag title*/
+h2#contact-title {
+    letter-spacing: 0;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 50px;
+    margin-bottom: 18px;
+    display: block;
+}
+/*Makes the round circles that houses the icons*/
+div.icon-size {
+    height: 100px;
+    width: 100px;
+    line-height: 98px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 auto;
+    background-color: lightgray;
+
+}
+
+/*Makes the icon appear in the middle of the circle*/
+img.svg-icon {
+    height: 48px;
+    width: 48px;
+    vertical-align: middle;
+}
+
+/*makes the text align center in the columns*/
+p.box-icon-content {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+
+
+
+
+

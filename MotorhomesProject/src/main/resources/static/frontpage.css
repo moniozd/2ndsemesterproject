@@ -29,7 +29,7 @@ a#title {
 }
 /*design of gallery*/
 .box-container{
-display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
@@ -72,6 +72,7 @@ ul#nav-bar {
     list-style-type: none;
     padding: 0px;
     margin: 0 auto;
+    width: 100%;
     /*background-color: #002366;*/
 
 }
@@ -107,9 +108,17 @@ ul#nav-bar li a:hover {
 
 /*}*/
 
+header#top-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: white;
+}
+
 
 div#front_page_picture_div {
-    margin: 0;
+    margin-top: 58px;
     border: none;
     max-height: 630px;
 }
