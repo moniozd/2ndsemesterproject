@@ -1,3 +1,4 @@
+/*
 package com.example.demo.controller;
 
 import com.example.demo.service.CustomerService;
@@ -17,3 +18,4 @@ public class RegisterCustomerController {
     }
 
 }
+*/

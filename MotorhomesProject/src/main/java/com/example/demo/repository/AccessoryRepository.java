@@ -1,3 +1,4 @@
+/*
 package com.example.demo.repository;
 
 
@@ -19,3 +20,4 @@ public class AccessoryRepository {
                 new BeanPropertyRowMapper<>(CustomerModel.class));
     }
 }
+*/

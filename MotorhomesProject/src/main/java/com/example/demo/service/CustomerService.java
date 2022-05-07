@@ -1,13 +1,16 @@
+/*
 package com.example.demo.service;
 
 import com.example.demo.model.CustomerModel;
-import com.example.demo.model.RentalModel;
+
 import com.example.demo.repository.CustomerRepository;
-import com.example.demo.repository.RentalRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CustomerService {
 
     @Autowired
@@ -18,3 +21,4 @@ public class CustomerService {
     }
 
 }
+*/

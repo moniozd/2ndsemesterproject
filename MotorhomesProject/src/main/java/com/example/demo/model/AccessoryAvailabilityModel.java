@@ -1,3 +1,4 @@
+/*
 package com.example.demo.model;
 
 import lombok.Data;
@@ -10,4 +11,4 @@ public class AccessoryAvailabilityModel extends IdModel {
 
     private AccessoryModel accessory;
     private int amount;
-}
+}*/

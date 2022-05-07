@@ -1,3 +1,4 @@
+/*
 package com.example.demo.model;
 
 import java.time.LocalDate;
@@ -19,4 +20,4 @@ public class RentalModel extends IdModel {
     private LocalDate startDate;
     private LocalDate endDate;
 
-}
+}*/

@@ -19,6 +19,7 @@ h3 {
 /*Makes the background color of the 3 column section white*/
 div#page-section {
     background-color: white;
+    overflow: hidden;
 }
 /*gives the title 60px padding on the top*/
 div#padding-1 {
@@ -84,7 +85,40 @@ p.box-icon-content {
     }
 }
 
+div#padding-60 {
+    height: 60px;
+    overflow: hidden;
+}
 
+div#page-section-2 {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    margin: 20px auto;
+    overflow: hidden;
+    background-color: lightgray;
+}
+
+div#two-column-container {
+    max-width: 1140px;
+    position: relative;
+    margin: 0 auto;
+}
+
+div#left-column-section-2 {
+    height: 100%;
+    width: 50%;
+    float: left;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+div#form-block {
+    height: 100%;
+    width: 50%;
+    float: left;
+    padding-right: 15px;
+    padding-left: 15px;
+}
 
 
 

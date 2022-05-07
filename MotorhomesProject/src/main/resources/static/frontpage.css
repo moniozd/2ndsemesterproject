@@ -29,6 +29,7 @@ a#title {
 }
 
 
+
 /*navigtion bar*/
 ul#nav-bar {
     list-style-type: none;
@@ -73,7 +74,7 @@ ul#nav-bar li a:hover {
 div#front_page_picture_div {
     margin: 0;
     border: none;
-    max-height: 630px;
+    overflow: hidden;
 }
 
 
@@ -92,11 +93,13 @@ div#footer {
     min-height: 100%;
     position: relative;
 }
-    header{
-        display: flex;
-        justify-content: flex-end;
 
+header{
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
 }
+
 
 .footer-table {
     padding: 0;
