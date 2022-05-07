@@ -14,6 +14,10 @@ public class MotorhomeTypeModel extends IdModel {
         this.price = price;
     }
 
+    public MotorhomeTypeModel() {
+
+    }
+
     public String getName() {
         return name;
     }
