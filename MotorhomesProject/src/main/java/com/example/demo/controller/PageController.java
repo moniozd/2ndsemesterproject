@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import com.example.demo.service.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,10 +20,8 @@ public class PageController {
         return "gallery/gallery";
     }
 
-    @GetMapping("/register_customer")
-    public String registerCustomerPage(Model model) {
-        return "register_customer/register_customer";
-    }
+
+
 
     @GetMapping("/book_a_car")
     public String bookACarPage(Model model) {
@@ -53,10 +53,6 @@ public class PageController {
     public String mapPage() {
         return "map/map";
     }
-
-
-
-
 
 
 }

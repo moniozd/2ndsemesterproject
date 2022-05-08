@@ -1,7 +1,6 @@
-/*
 package com.example.demo.repository;
 
-import com.example.demo.model.CustomerModel;
+import com.example.demo.model.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -15,9 +14,15 @@ public class CustomerRepository {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    public List<CustomerModel> fetchAll(){
+    public List<Customer> fetchAll(){
         return jdbcTemplate.query("SELECT * FROM customers;",
-                new BeanPropertyRowMapper<>(CustomerModel.class));
+                new BeanPropertyRowMapper<>(Customer.class));
     }
+
+    public Customer addCustomer(Customer customer) {
+        String sql = "INSERT INTO customers (firstName, lastName, email, phoneNumber) VALUES (?, ?, ?, ?);";
+        jdbcTemplate.update(sql, customer.getFirstName(), customer.getLastName(), customer.getEmail(), customer.getPhoneNumber());
+        return null;
+    }
+
 }
-*/
