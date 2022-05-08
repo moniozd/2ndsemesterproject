@@ -12,6 +12,7 @@ body {
     flex-direction: column;
     margin:0;
     padding:40px;
+    overflow: hidden;
 }
 /*design of gallery*/
 .box-container{
@@ -20,11 +21,15 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     overflow: hidden;
+    padding: 20px;
 }
+
+
 .p-picture{
     max-height: 350px;
     padding:30px;
 }
+
 .book-now-bt{
     padding: 1.3em 3em;
     font-size: 12px;

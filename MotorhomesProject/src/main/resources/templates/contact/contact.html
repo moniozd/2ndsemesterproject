@@ -153,12 +153,12 @@
 <div id="page-section-2">
     <div id="two-column-container">
         <div id="left-column-section-2">
-            <h2>Message Us</h2>
+            <h3 id="message-us">Message Us</h3>
             <div id="message-text-block">
                 <p id="p1">
                     If you wish to be considered for employment at Nordic Motorhomes,
                     please do not send a message, here – instead,
-                    please submmit any job application to Nordic Motorhomes job mail found above
+                    submit any job application to Nordic Motorhomes job mail found above
                     and our Human Resources department will contact you after their
                     review of your submitted information.
                 </p>
@@ -166,16 +166,36 @@
         </div>
         <div id="form-block">
             <form action="https://formsubmit.co/aasjnyborg@hotmail.com" method="POST">
-                <input type="text" name="first_name" placeholder="First Name" required>
-                <input type="text" name="last_name" placeholder="Last Name" required>
-                <input type="email" name="email" placeholder="E-mail" required>
+                <label for="first_name">First Name: </label>
+                <br><input type="text" id="first_name" name="first_name" placeholder="First Name" required>
+
+                <br><br><label for="first_name">Last Name: </label>
+                <br><input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
+
+                <br><label for="email"><br> E-mail: </label>
+                <br><input type="email" id="email" name="email" placeholder="E-mail" required>
+
                 <input type="hidden" name="_subject" value="New General Inquiry">
-                <textarea name="message" placeholder="Your message here..."></textarea>
+
+                <label for="message"><br> <br> Your Message: </label>
+                <br><textarea id="message" name="message" placeholder="Your message here..."></textarea>
+
                 <input type="hidden" name="_captcha" value="false">
+
+                <br>
                 <button type="submit">Send</button>
             </form>
         </div>
     </div>
+</div>
+
+<div id="page-section-map">
+    <div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2247.419104155542!2d12.424333916095291!3d55.716468402261036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465250510b2e4971%3A0x24477b91b955db66!2sMileparken%2024%2C%202730%20Herlev!5e0!3m2!1sen!2sdk!4v1652009196599!5m2!1sen!2sdk"
+                style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
 </div>
 
 <footer>
