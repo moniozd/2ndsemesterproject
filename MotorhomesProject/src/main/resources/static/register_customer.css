@@ -9,15 +9,17 @@ input[type=text] {
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
+    text-align: center;
 }
 
 [type=email] {
-    width: 75%;
+    width: 50%;
     padding: 12px 12px;
     margin: 8px 0;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
+    text-align: center;
 }
 
 textarea#message {
@@ -39,5 +41,52 @@ button[type=submit] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    float: left;
+}
+
+
+div#customer-form-container {
+    padding: 60px;
+    overflow: hidden;
+    text-align: center;
+    display: table;
+    min-width: 50%;
+    margin: 0 auto;
+}
+
+h1#register-customer-title {
+    font-size: 24px;
+}
+
+div#customer-table-container {
+    overflow: hidden;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 120px;
+}
+
+table#customer-table {
+    overflow: hidden;
+    text-align: center;
+    margin: 0 auto;
+}
+
+h2#view-customer-title {
+    font-size: 24px;
+    padding-bottom: 20px;
+}
+
+table {
+    width: 50%;
+    background-color: lightgray;
+}
+
+tr {
+    font-size: 20px;
+}
+
+tr:nth-child(even) {
+    background-color: white;
+    align-content: center;
+    padding: 5px;
+
 }
