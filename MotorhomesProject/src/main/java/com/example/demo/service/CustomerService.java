@@ -23,4 +23,17 @@ public class CustomerService {
         return customerRepository.addCustomer(customer);
     }
 
+    public Customer findCustomerById(int id) {
+        return customerRepository.findCustomerById(id);
+    }
+
+    public Boolean deleteCustomer(int id) {
+        return customerRepository.deleteCustomer(id);
+    }
+
+    public Customer updateCustomer(int id, Customer customer) {
+        return customerRepository.updateCustomer(id, customer);
+    }
+
+
 }

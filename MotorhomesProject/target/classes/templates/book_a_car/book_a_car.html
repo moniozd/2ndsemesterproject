@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book a car</title>
+    <link rel="icon" href="/browser-icon.png">
+    <link rel="stylesheet" href="/global.css">
+    <link rel="stylesheet" href="/frontpage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../../static/global.css">
+    <link rel="stylesheet" href="../../static/frontpage.css">
+</head>
+<body>
+<header id="top-bar">
+    <a id="title" href="/"><h1>NORDIC<br>MOTORHOMES</h1></a>
+    <nav>
+
+        <div class="table">
+            <ul id="nav-bar">
+                <!--                <li class="border"><a href="/">HOME</a></li>-->
+
+                <li class="border"><a href="/register_customer">REGISTER CUSTOMER</a></li>
+                <li class="border"><a href="/book_a_car">BOOK A CAR</a></li>
+                <li class="border"><a href="/gallery">GALLERY</a></li>
+                <li class="border"><a href="/bookings">BOOKINGS</a></li>
+                <li class="border"><a href="/mechanic">MECHANIC</a></li>
+                <!--                <li class="border"><a href="../employees/employees.html">EMPLOYEES</a></li>-->
+                <li class="search-container"> <input type="text" name="search-text" placeholder="Search..." class="search-input" /> <button class="search-button">&#x1F50D</button></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<div id="front_page_picture_div">
+    <!--    <img src="../../bc_sonic-motorhomes.jpg" alt="Picture of a motor home and two people sitting outside during night"-->
+    <!--         id="front_page_picture">-->
+    <img src="https://raw.githubusercontent.com/moniozd/2ndsemesterproject/main/MotorhomesProject/src/main/resources/day_sonic_of_hero_web.jpeg" alt="Picture of a motor home and two people sitting outside during the day" id="front_page_picture_day">
+</div>
+
+<h1>BOOK A CAR</h1>
+
+<form action="/addBooking" method="post">
+    <label for="customer_name">First Name:</label>
+    <input type="text" id="customer_name" name="customer_name" placeholder="First Name">
+    <br>
+    <label for="customer_last_name">Last Name:</label>
+    <input type="text" id="customer_last_name" name="customer_last_name" placeholder="Last Name">
+    <br>
+    <label for="motor_home_model">Motor Home:</label>
+    <select id="motor_home_model" name="motor_home_model">
+        <option value="HYMER B-Class MasterLine T">HYMER B-Class MasterLine T</option>
+        <option value="HYMER B-Class ModerComofort T">HYMER B-Class ModerComofort T</option>
+        <option value="HYMER Exix-i">HYMER Exix-i</option>
+    </select>
+    <br>
+    <label for="phone_number">Phone Number:</label>
+    <input type="text" id="phone_number" name="phone_number" placeholder="Phone Number">
+    <br>
+    <label for="email">E-mail:</label>
+    <input type="text" id="email" name="email" placeholder="E-mail">
+    <br>
+    <input type="submit" value="Add Booking" style="color: #0ab80f">
+</form>
+
+
+
+</body>
+</html>
