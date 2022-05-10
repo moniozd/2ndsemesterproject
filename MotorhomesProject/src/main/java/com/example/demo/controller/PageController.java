@@ -1,7 +1,5 @@
 package com.example.demo.controller;
 
-import com.example.demo.service.CustomerService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +21,7 @@ public class PageController {
 
     @GetMapping("/bookings")
     public String bookingsPage(Model model) {
-        return "bookings/bookings";
+        return "register_booking";
     }
 
     @GetMapping("/mechanic")
