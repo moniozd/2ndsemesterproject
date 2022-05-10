@@ -1,3 +1,4 @@
+/*
 package com.example.demo.model;
 
 import javax.persistence.Entity;
@@ -24,3 +25,4 @@ public class AccessoryRentalModel extends IdModel {
         return (daysInTotal * amountOfAccessories) * accessory.getPrice();
     }
 }
+*/

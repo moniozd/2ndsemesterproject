@@ -1,3 +1,4 @@
+/*
 package com.example.demo.model;
 
 import javax.persistence.Entity;
@@ -12,6 +13,10 @@ public class MotorhomeTypeModel extends IdModel {
         this.name = name;
         this.numberOfBeds = numberOfBeds;
         this.price = price;
+    }
+
+    public MotorhomeTypeModel() {
+
     }
 
     public String getName() {
@@ -41,3 +46,4 @@ public class MotorhomeTypeModel extends IdModel {
 
 }
 
+*/

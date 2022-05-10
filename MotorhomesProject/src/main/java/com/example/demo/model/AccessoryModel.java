@@ -1,3 +1,4 @@
+/*
 package com.example.demo.model;
 
 import java.time.LocalDate;
@@ -22,4 +23,4 @@ public class AccessoryModel extends IdModel {
     public double getRentalPriceByDays(LocalDate startDate, LocalDate endDate) {
         return getRentalPriceByDays((int) ChronoUnit.DAYS.between(startDate, endDate));
     }
-}
+}*/
