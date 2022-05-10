@@ -1,3 +1,4 @@
+/*
 package com.example.demo.model;
 
 import lombok.Data;
@@ -11,4 +12,4 @@ public class MotorhomeModel extends IdModel {
     private int kilometers;
     private boolean serviceNeeded;
     private boolean cleaningNeeded;
-}
+}*/
