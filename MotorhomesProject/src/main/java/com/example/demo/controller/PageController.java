@@ -21,13 +21,6 @@ public class PageController {
     }
 
 
-
-
-    @GetMapping("/book_a_car")
-    public String bookACarPage(Model model) {
-        return "book_a_car/book_a_car";
-    }
-
     @GetMapping("/bookings")
     public String bookingsPage(Model model) {
         return "bookings/bookings";
