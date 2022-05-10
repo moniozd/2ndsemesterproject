@@ -20,14 +20,24 @@ public class BookingRepository {
                 new BeanPropertyRowMapper<>(BookingModel.class));
     }
 
+    // Displays the id and the name with CONCAT
+/*    public List<BookingModel> fetchAll(){
+        return jdbcTemplate.query("SELECT bookings.id, CONCAT(c.id,'-', c.firstName),CONCAT(m.id,'-',m.name) ,CONCAT(a.id, '-', a.name) , startDate, endDate\n" +
+                "FROM bookings\n" +
+                "         LEFT JOIN accessories a on a.id = bookings.accessoriesId\n" +
+                "LEFT JOIN customers c on c.id = bookings.customerId\n" +
+                "LEFT JOIN motorhomes m on m.id = bookings.motorhomeId;",
+                new BeanPropertyRowMapper<>(BookingModel.class));
+    }*/
+
     public BookingModel addBooking(BookingModel booking) {
-        String sql = "INSERT INTO bookings (id, price, customer_id, accessories_id, motorhome_id, startDate, endDate) VALUES (?, ?, ?, ?, ?, ?, ?);";
-        jdbcTemplate.update(sql, booking.getId(), booking.getPrice(), booking.getCustomerId(), booking.getAccessoriesId(), booking.getMotorhomeId(), booking.getStartDate(), booking.getEndDate());
+        String sql = "INSERT INTO bookings (customerId, motorhomeId, accessoriesId, startDate, endDate) VALUES (?, ?, ?, ?, ?);";
+        jdbcTemplate.update(sql, booking.getCustomerId(), booking.getMotorhomeId(), booking.getAccessoriesId(), booking.getStartDate(), booking.getEndDate());
         return null;
     }
 
     public BookingModel findBookingById() {
-        String sql = "SELECT id, price, customer_id, accessories_id, motorhome_id, startDate, endDate FROM bookings WHERE id = ?;";
+        String sql = "SELECT id, price, customerId, accessoriesId, motorhomeId, startDate, endDate FROM bookings WHERE id = ?;";
         RowMapper<BookingModel> rowMapper = new BeanPropertyRowMapper<>(BookingModel.class);
         BookingModel booking = jdbcTemplate.queryForObject(sql, rowMapper);
         return booking;
@@ -39,7 +49,7 @@ public class BookingRepository {
     }
 
     public BookingModel updateBooking(int id, BookingModel booking) {
-        String sql = "UPDATE customers SET price = ?, customer_id = ?, accessories_id = ?, motorhome_id = ?, startDate = ?, endDate = ? WHERE id = ?;";
+        String sql = "UPDATE bookings SET price = ?, customerId = ?, accessoriesId = ?, motorhomeId = ?, startDate = ?, endDate = ? WHERE id = ?;";
         jdbcTemplate.update(sql, booking.getId(),booking.getPrice(), booking.getCustomerId(), booking.getAccessoriesId(), booking.getMotorhomeId(),
                 booking.getStartDate(), booking.getEndDate());
         return null;

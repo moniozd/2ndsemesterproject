@@ -1,6 +1,7 @@
 package com.example.demo.repository;
 
 import com.example.demo.model.CustomerModel;
+import com.example.demo.model.MotorhomeModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -17,6 +18,11 @@ public class CustomerRepository {
 
     public List<CustomerModel> fetchAll(){
         return jdbcTemplate.query("SELECT * FROM customers;",
+                new BeanPropertyRowMapper<>(CustomerModel.class));
+    }
+
+    public List<CustomerModel> fetchIdAndName(){
+        return jdbcTemplate.query("SELECT id, firstName FROM customers;",
                 new BeanPropertyRowMapper<>(CustomerModel.class));
     }
 

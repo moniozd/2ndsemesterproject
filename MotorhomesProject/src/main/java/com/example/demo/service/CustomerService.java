@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.model.CustomerModel;
 
+import com.example.demo.model.MotorhomeModel;
 import com.example.demo.repository.CustomerRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,11 @@ public class CustomerService {
     public List<CustomerModel> fetchAll() {
         return customerRepository.fetchAll();
     }
+
+    public List<CustomerModel> fetchIdAndName() {
+        return customerRepository.fetchIdAndName();
+    }
+
 
     public CustomerModel addCustomer(CustomerModel customer) {
         return customerRepository.addCustomer(customer);

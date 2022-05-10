@@ -23,7 +23,6 @@ public class PageController {
         return "mechanic/mechanic";
     }
 
-
     @GetMapping("/contact")
     public String contactPage() {
         return "contact/contact";

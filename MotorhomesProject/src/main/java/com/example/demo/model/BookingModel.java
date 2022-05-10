@@ -1,11 +1,16 @@
 
 package com.example.demo.model;
 
+import lombok.Data;
+
 import java.time.LocalDate;
+import java.util.Date;
 
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+
+@Data
 
 @Entity
 public class BookingModel {
@@ -16,10 +21,20 @@ public class BookingModel {
     private int motorhomeId;
     private int accessoriesId;
     private int price;
-    private LocalDate startDate;
-    private LocalDate endDate;
+    private String startDate;
+    private String endDate;
 
-    public BookingModel(){}
+/*    public BookingModel(){}
+
+    public BookingModel(int id, int customerId, int motorhomeId, int accessoriesId, LocalDate startDate, LocalDate endDate) {
+        this.id = id;
+        this.customerId = customerId;
+        this.motorhomeId = motorhomeId;
+        this.accessoriesId = accessoriesId;
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
+
 
     public BookingModel(int id, int customerId, int motorhomeId, int accessoriesId, int price, LocalDate startDate, LocalDate endDate) {
         this.id = id;
@@ -85,5 +100,5 @@ public class BookingModel {
 
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
-    }
+    }*/
 }
