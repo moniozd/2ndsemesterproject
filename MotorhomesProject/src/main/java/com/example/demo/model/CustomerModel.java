@@ -1,13 +1,11 @@
 package com.example.demo.model;
 
-import lombok.Data;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 
 @Entity
-public class Customer {
+public class CustomerModel {
 
     @Id
     private int id;
@@ -16,9 +14,9 @@ public class Customer {
     private String email;
     private int phoneNumber;
 
-    public Customer(){}
+    public CustomerModel(){}
 
-    public Customer(int id, String firstName, String lastName, String email, int phoneNumber) {
+    public CustomerModel(int id, String firstName, String lastName, String email, int phoneNumber) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
