@@ -2,14 +2,13 @@
 package com.example.demo.model;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class RentalModel {
+public class BookingModel {
 
     @Id
     private int id;
@@ -20,9 +19,9 @@ public class RentalModel {
     private LocalDate startDate;
     private LocalDate endDate;
 
-    public RentalModel(){}
+    public BookingModel(){}
 
-    public RentalModel(int id, int customerId, int motorhomeId, int accessoriesId, int price, LocalDate startDate, LocalDate endDate) {
+    public BookingModel(int id, int customerId, int motorhomeId, int accessoriesId, int price, LocalDate startDate, LocalDate endDate) {
         this.id = id;
         this.customerId = customerId;
         this.motorhomeId = motorhomeId;

@@ -28,8 +28,6 @@ public class customerController {
         return "redirect:/register_customer";
     }
 
-
-
     @GetMapping("/delete/{id}")
     public String deleteCustomer(@PathVariable("id") int id) {
         boolean deleted = customerService.deleteCustomer(id);

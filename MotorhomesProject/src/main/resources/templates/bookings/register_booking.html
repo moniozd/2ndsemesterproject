@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>Map</title>
+    <title>Bookings</title>
     <link rel="icon" href="../../browser-icon.png">
-    <link rel="stylesheet" href="../../static/global.css">
     <link rel="stylesheet" href="../../static/frontpage.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../../static/global.css">
+    <link rel="stylesheet" href="../../static/register_customer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="/global.css">
+    <link rel="stylesheet" type="text/css" href="/frontpage.css">
+    <link rel="stylesheet" type="text/css" href="/register_booking.css">
 </head>
 <body>
 <header id="top-bar">
@@ -20,7 +25,7 @@
                 <li class="border"><a href="../register_customer/register_a_customer.html">REGISTER A CUSTOMER</a></li>
                 <li class="border"><a href="../book_a_car/book_a_car.html">BOOK A CAR</a></li>
                 <li class="border"><a href="../gallery/gallery.html">GALLERY</a></li>
-                <li class="border"><a href="../bookings/bookings.html">BOOKINGS</a></li>
+                <li class="border"><a href="register_booking.html">BOOKINGS</a></li>
                 <li class="border"><a href="../mechanic/mechanic.html">MECHANIC</a></li>
                 <!--                <li class="border"><a href="../employees/employees.html">EMPLOYEES</a></li>-->
                 <li class="search-container"> <input type="text" name="search-text" placeholder="Search..." class="search-input" /> <button class="search-button">&#x1F50D</button></li>
@@ -36,7 +41,44 @@
     <img src="../../day_sonic_of_hero_web.jpeg" alt="Picture of a motor home and two people sitting outside during the day" id="front_page_picture_day">
 </div>
 <br>
-<h2>MAP</h2>
+<h2>BOOKINGS</h2>
+<div id="booking-table-container">
+    <h2 id="view-booking-title">VIEW BOOKINGS</h2>
+    <table id="booking-table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Price</th>
+            <th>Customer ID</th>
+            <th>Motorhome ID</th>
+            <th>Accessories ID</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="booking: ${bookings}">
+            <td th:text="${booking.getId()}"></td>
+            <td th:text="${booking.getPrice()}"></td>
+            <td th:text="${booking.getCustomerId()}"></td>
+            <td th:text="${booking.getMotorhomeId()}"></td>
+            <td th:text="${booking.getAccessoriesId()}"></td>
+            <td th:text="${booking.getStartDate()}"></td>
+            <td th:text="${booking.getEndDate()}"></td>
+            <td id="btn-column">
+                <a th:href="@{'/delete/'+${booking.id}}">
+                    <button class="btn-delete" id="btn-delete">Delete Booking</button>
+                </a>
+                <a th:href="@{'bookings/edit/'+${booking.id}}">
+                    <button class="btn-edit" id="btn-edit">Edit Booking</button>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
 <footer>
     <div id="footer">
 
@@ -51,13 +93,13 @@
 
             <ul class="list">
                 <li>
-                    <a href="../about/about.html">ABOUT</a>
+                    <a href="/about">ABOUT</a>
                 </li>
                 <li>
-                    <a href="../contact/contact.html">CONTACT</a>
+                    <a href="/contact">CONTACT</a>
                 </li>
                 <li>
-                    <a href="../map/map.html">MAP</a>
+                    <a href="/map">EMPLOYEES</a>
                 </li>
             </ul>
             <p class="copyright">
