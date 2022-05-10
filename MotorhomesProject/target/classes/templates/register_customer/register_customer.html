@@ -82,15 +82,15 @@
         <tbody>
         <tr th:each="customer : ${customers}">
             <td th:text="${customer.getId()}"></td>
-            <td contenteditable="true" th:text="${customer.getFirstName()}"></td>
-            <td contenteditable="true" th:text="${customer.getLastName()}"></td>
-            <td contenteditable="true" th:text="${customer.getEmail()}"></td>
-            <td contenteditable="true" th:text="${customer.getPhoneNumber()}"></td>
+            <td th:text="${customer.getFirstName()}"></td>
+            <td th:text="${customer.getLastName()}"></td>
+            <td th:text="${customer.getEmail()}"></td>
+            <td th:text="${customer.getPhoneNumber()}"></td>
             <td id="btn-column">
                 <a th:href="@{'/delete/'+${customer.id}}">
                     <button class="btn-delete" id="btn-delete">Delete Customer</button>
                 </a>
-                <a th:href="@{'/edit/'+${customer.id}}">
+                <a th:href="@{'register_customer/edit/'+${customer.id}}">
                     <button class="btn-edit" id="btn-edit">Edit Customer</button>
                 </a>
             </td>

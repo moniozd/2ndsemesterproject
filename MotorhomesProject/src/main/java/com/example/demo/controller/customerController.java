@@ -28,11 +28,7 @@ public class customerController {
         return "redirect:/register_customer";
     }
 
-    @PostMapping("/edit")
-    public String edit(@ModelAttribute Customer customer) {
-        customerService.updateCustomer(customer.getId(), customer);
-        return "redirect:/";
-    }
+
 
     @GetMapping("/delete/{id}")
     public String deleteCustomer(@PathVariable("id") int id) {
@@ -42,8 +38,13 @@ public class customerController {
 
     @GetMapping("/edit/{id}")
     public String updateCustomer(@PathVariable("id") int id, Model model) {
-        model.addAttribute("user", customerService.findCustomerById(id));
-        return "register_customer/edit";
+        model.addAttribute("customer", customerService.findCustomerById(id));
+        return "/register_customer/edit";
     }
 
+    @PostMapping("/edit")
+    public String edit(@ModelAttribute Customer customer) {
+        customerService.updateCustomer(customer.getId(), customer);
+        return "redirect:/";
+    }
 }
