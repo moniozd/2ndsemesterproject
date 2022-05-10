@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.Customer;
+import com.example.demo.model.CustomerModel;
 import com.example.demo.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,7 +23,7 @@ public class customerController {
     }
 
     @PostMapping("/register_customer")
-    public String addCustomer(@ModelAttribute Customer customer) {
+    public String addCustomer(@ModelAttribute CustomerModel customer) {
         customerService.addCustomer(customer);
         return "redirect:/register_customer";
     }
@@ -42,7 +42,7 @@ public class customerController {
     }
 
     @PostMapping("/edit")
-    public String edit(@ModelAttribute Customer customer) {
+    public String edit(@ModelAttribute CustomerModel customer) {
         customerService.updateCustomer(customer.getId(), customer);
         return "redirect:/";
     }

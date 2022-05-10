@@ -1,6 +1,6 @@
 package com.example.demo.repository;
 
-import com.example.demo.model.Customer;
+import com.example.demo.model.CustomerModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -15,21 +15,21 @@ public class CustomerRepository {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    public List<Customer> fetchAll(){
+    public List<CustomerModel> fetchAll(){
         return jdbcTemplate.query("SELECT * FROM customers;",
-                new BeanPropertyRowMapper<>(Customer.class));
+                new BeanPropertyRowMapper<>(CustomerModel.class));
     }
 
-    public Customer addCustomer(Customer customer) {
+    public CustomerModel addCustomer(CustomerModel customer) {
         String sql = "INSERT INTO customers (firstName, lastName, email, phoneNumber) VALUES (?, ?, ?, ?);";
         jdbcTemplate.update(sql, customer.getFirstName(), customer.getLastName(), customer.getEmail(), customer.getPhoneNumber());
         return null;
     }
 
-    public Customer findCustomerById(int id) {
+    public CustomerModel findCustomerById(int id) {
         String sql = "SELECT id, firstName, lastName, email, phoneNumber FROM customers WHERE id = ?;";
-        RowMapper<Customer> rowMapper = new BeanPropertyRowMapper<>(Customer.class);
-        Customer customer = jdbcTemplate.queryForObject(sql, rowMapper);
+        RowMapper<CustomerModel> rowMapper = new BeanPropertyRowMapper<>(CustomerModel.class);
+        CustomerModel customer = jdbcTemplate.queryForObject(sql, rowMapper);
         return customer;
     }
 
@@ -38,7 +38,7 @@ public class CustomerRepository {
         return jdbcTemplate.update(sql, id) > 0;
     }
 
-    public Customer updateCustomer(int id, Customer customer) {
+    public CustomerModel updateCustomer(int id, CustomerModel customer) {
         String sql = "UPDATE customers SET firstName = ?, lastName = ?, email = ?, phoneNumber = ? WHERE id = ?;";
         jdbcTemplate.update(sql, customer.getId(),customer.getFirstName(), customer.getLastName(), customer.getEmail(), customer.getPhoneNumber());
         return null;

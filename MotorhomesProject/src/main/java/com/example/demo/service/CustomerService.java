@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.model.Customer;
+import com.example.demo.model.CustomerModel;
 
 import com.example.demo.repository.CustomerRepository;
 
@@ -15,15 +15,15 @@ public class CustomerService {
     @Autowired
     CustomerRepository customerRepository;
 
-    public List<Customer> fetchAll() {
+    public List<CustomerModel> fetchAll() {
         return customerRepository.fetchAll();
     }
 
-    public Customer addCustomer(Customer customer) {
+    public CustomerModel addCustomer(CustomerModel customer) {
         return customerRepository.addCustomer(customer);
     }
 
-    public Customer findCustomerById(int id) {
+    public CustomerModel findCustomerById(int id) {
         return customerRepository.findCustomerById(id);
     }
 
@@ -31,7 +31,7 @@ public class CustomerService {
         return customerRepository.deleteCustomer(id);
     }
 
-    public Customer updateCustomer(int id, Customer customer) {
+    public CustomerModel updateCustomer(int id, CustomerModel customer) {
         return customerRepository.updateCustomer(id, customer);
     }
 
