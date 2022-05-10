@@ -1,9 +1,8 @@
 package com.example.demo.controller;
 
 
-import com.example.demo.model.CustomerModel;
-import com.example.demo.model.RentalModel;
-import com.example.demo.service.RentalService;
+import com.example.demo.model.BookingModel;
+import com.example.demo.service.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class BookACarController {
 
     @Autowired
-    RentalService rentalService;
+    BookingService bookingService;
 
     @GetMapping("/book_a_car")
     public String bookACarPage(Model model) {
@@ -23,8 +22,8 @@ public class BookACarController {
     }
 
     @PostMapping("/book_a_car")
-    public String addCustomer(@ModelAttribute RentalModel rentalModel) {
-        rentalService.addBooking(rentalModel);
+    public String addCustomer(@ModelAttribute BookingModel bookingModel) {
+        bookingService.addBooking(bookingModel);
         return "redirect:/book_a_car";
     }
 

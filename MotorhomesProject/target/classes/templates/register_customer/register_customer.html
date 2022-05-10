@@ -87,10 +87,10 @@
             <td th:text="${customer.getEmail()}"></td>
             <td th:text="${customer.getPhoneNumber()}"></td>
             <td id="btn-column">
-                <a th:href="@{'/delete/'+${customer.id}}">
+                <a th:href="@{'/delete_customer/'+${customer.id}}">
                     <button class="btn-delete" id="btn-delete">Delete Customer</button>
                 </a>
-                <a th:href="@{'/register_customer/edit/'+${customer.id}}">
+                <a th:href="@{'/register_customer/edit_customer/'+${customer.id}}">
                     <button class="btn-edit" id="btn-edit">Edit Customer</button>
                 </a>
             </td>
@@ -120,7 +120,7 @@
                     <a href="/contact">CONTACT</a>
                 </li>
                 <li>
-                    <a href="/map">MAP</a>
+                    <a href="/map">EMPLOYEES</a>
                 </li>
             </ul>
             <p class="copyright">

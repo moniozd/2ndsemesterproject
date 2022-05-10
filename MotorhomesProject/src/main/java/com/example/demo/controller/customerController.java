@@ -28,20 +28,20 @@ public class customerController {
         return "redirect:/register_customer";
     }
 
-    @GetMapping("/delete/{id}")
+    @GetMapping("/delete_customer/{id}")
     public String deleteCustomer(@PathVariable("id") int id) {
         boolean deleted = customerService.deleteCustomer(id);
         return "redirect:/register_customer";
     }
 
-    @GetMapping("/edit/{id}")
+    @GetMapping("/edit_customer/{id}")
     public String updateCustomer(@PathVariable("id") int id, Model model) {
         model.addAttribute("customer", customerService.findCustomerById(id));
         return "register_customer/edit";
     }
 
-    @PostMapping("/edit")
-    public String edit(@ModelAttribute CustomerModel customer) {
+    @PostMapping("/edit_customer")
+    public String editCustomer(@ModelAttribute CustomerModel customer) {
         customerService.updateCustomer(customer.getId(), customer);
         return "redirect:/";
     }

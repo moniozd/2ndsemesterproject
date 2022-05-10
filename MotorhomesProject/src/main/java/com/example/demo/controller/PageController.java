@@ -17,13 +17,7 @@ public class PageController {
     public String galleryPage(Model model) {
         return "gallery/gallery";
     }
-
-
-    @GetMapping("/bookings")
-    public String bookingsPage(Model model) {
-        return "register_booking";
-    }
-
+    
     @GetMapping("/mechanic")
     public String mechanicPage(Model model) {
         return "mechanic/mechanic";

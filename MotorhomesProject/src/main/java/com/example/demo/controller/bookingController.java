@@ -28,19 +28,19 @@ public class bookingController {
         return "redirect:/bookings";
     }
 
-    @GetMapping("/delete/{id}")
+    @GetMapping("/delete_booking/{id}")
     public String deleteBooking(@PathVariable("id") int id) {
         boolean deleted = bookingService.deleteBooking(id);
         return "redirect:/bookings";
     }
 
-    @GetMapping("/edit/{id}")
+    @GetMapping("/edit_booking/{id}")
     public String updateBooking(@PathVariable("id") int id, Model model) {
         model.addAttribute("booking", bookingService.findBookingById(id));
         return "bookings/edit";
     }
 
-    @PostMapping("/edit")
+    @PostMapping("/edit_booking")
     public String edit(@ModelAttribute BookingModel booking) {
         bookingService.updateBooking(booking.getId(), booking);
         return "redirect:/";
