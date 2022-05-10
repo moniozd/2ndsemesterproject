@@ -39,7 +39,7 @@ public class customerController {
     @GetMapping("/edit/{id}")
     public String updateCustomer(@PathVariable("id") int id, Model model) {
         model.addAttribute("customer", customerService.findCustomerById(id));
-        return "/register_customer/edit";
+        return "register_customer/edit";
     }
 
     @PostMapping("/edit")
