@@ -8,23 +8,28 @@
 /*    bottom: 5px;*/
 /*}*/
 
+*{
+    margin: 0;
+    padding: 0;
+}
+
 .employees_gallery{
-    width: 60%;
-    margin:auto;
-    display:grid;
-    /*width: 700px;*/
-    grid-template-columns: repeat(2,1fr);
-    grid-gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    padding: 20px;
+
 }
 .employee_picture{
     position: relative;
     border-radius: 10px;
     /*box-shadow: 3px 3px 5px lightblue;*/
     cursor: pointer;
-
 }
-.employee_picture img{
-    width: 200px;
-    height: 250px;
-    border-radius: 10px;
-}
+    .employee_picture img{
+        width: 200px;
+        height: 250px;
+        border-radius: 10px;
+    }
