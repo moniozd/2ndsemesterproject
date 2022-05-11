@@ -1,0 +1,30 @@
+/*.employee_content{*/
+/*    background-color:white;*/
+/*    width: 90%;*/
+/*    margin: 0 auto 20px auto;*/
+/*    height: 60px;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    bottom: 5px;*/
+/*}*/
+
+.employees_gallery{
+    width: 60%;
+    margin:auto;
+    display:grid;
+    /*width: 700px;*/
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 20px;
+}
+.employee_picture{
+    position: relative;
+    border-radius: 10px;
+    /*box-shadow: 3px 3px 5px lightblue;*/
+    cursor: pointer;
+
+}
+.employee_picture img{
+    width: 200px;
+    height: 250px;
+    border-radius: 10px;
+}
