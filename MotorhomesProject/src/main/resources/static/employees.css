@@ -1,18 +1,15 @@
-/*.employee_content{*/
-/*    background-color:white;*/
-/*    width: 90%;*/
-/*    margin: 0 auto 20px auto;*/
-/*    height: 60px;*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    bottom: 5px;*/
-/*}*/
 
 *{
     margin: 0;
     padding: 0;
 }
-
+.employees{
+    position: relative;
+    flex-direction: column;
+    margin:0;
+    padding:30px;
+    overflow: hidden;
+}
 .employees_gallery{
     display: flex;
     align-items: center;
@@ -27,9 +24,11 @@
     border-radius: 10px;
     /*box-shadow: 3px 3px 5px lightblue;*/
     cursor: pointer;
+
 }
     .employee_picture img{
         width: 200px;
         height: 250px;
         border-radius: 10px;
+        padding:30px;
     }
