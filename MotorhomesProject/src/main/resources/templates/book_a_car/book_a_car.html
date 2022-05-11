@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../../static/global.css">
     <link rel="stylesheet" href="../../static/frontpage.css">
+    <link rel="stylesheet" href="../../static/book_a_car.css">
 </head>
 <body>
 <header id="top-bar">
@@ -37,8 +38,8 @@
     <img src="https://raw.githubusercontent.com/moniozd/2ndsemesterproject/main/MotorhomesProject/src/main/resources/day_sonic_of_hero_web.jpeg" alt="Picture of a motor home and two people sitting outside during the day" id="front_page_picture_day">
 </div>
 
-<div>
-    <h1>BOOK A CAR</h1>
+<div id="customer-form-container">
+    <h1 id="book-car-title">BOOK A CAR</h1>
 
     <form action="" method="post">
         <label for="customer">Customer:</label>
@@ -55,6 +56,7 @@
        <!-- <label for="motor_home_model">quantity:</label>
         <input type="number" id="motor_home_model_quantity" name="motor_home_model" min="0" max="4" value="1">-->
         <br>
+        <label for="accessories">Accessories:</label>
         <select id="accessories" name="accessories">
             <option value="0">Select Accessories</option>
             <option th:each="accessories : ${accessories}" th:value="${accessories.id}" th:text="${accessories.name}"></option>
@@ -67,8 +69,8 @@
         <br>
         <label for="enddate">Drop-off Date:</label>
         <input type="text" id="enddate" name="enddate" placeholder="yyyy-mm-dd">
-
-        <input type="submit" value="Add Booking" style="color: #0ab80f">
+        <br>
+        <button id="submit-button" type="submit">Add Booking</button>
     </form>
 
 </div>
