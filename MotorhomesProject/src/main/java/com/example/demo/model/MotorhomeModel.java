@@ -3,10 +3,8 @@ package com.example.demo.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -18,6 +16,10 @@ public class MotorhomeModel {
     private int numberOfBeds;
     private boolean serviceNeeded;
     private boolean cleaningNeeded;
+
+    @OneToMany(cascade = CascadeType.ALL, targetEntity = BookingModel.class)
+    @JoinColumn(name = "motorhomeId")
+    private List<BookingModel> bookingModelList;
 
 public MotorhomeModel(){}
 

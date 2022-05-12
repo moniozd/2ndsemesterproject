@@ -1,9 +1,11 @@
 package com.example.demo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import lombok.Data;
 
+import javax.persistence.*;
+import java.util.List;
 
+@Data
 @Entity
 public class CustomerModel {
 
@@ -14,14 +16,21 @@ public class CustomerModel {
     private String email;
     private int phoneNumber;
 
-    public CustomerModel(){}
+    @OneToMany(cascade = CascadeType.ALL, targetEntity = BookingModel.class)
+    @JoinColumn(name = "customerId")
+    private List<BookingModel> bookingModelList;
 
-    public CustomerModel(int id, String firstName, String lastName, String email, int phoneNumber) {
+    public CustomerModel(List<BookingModel> bookingModelList){
+        this.bookingModelList = bookingModelList;
+    }
+
+    public CustomerModel(int id, String firstName, String lastName, String email, int phoneNumber, List<BookingModel> bookingModelList) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
+        this.bookingModelList = bookingModelList;
     }
 
     public int getId() {

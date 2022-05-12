@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
 }
-.employees{
+div.employees{
     position: relative;
     flex-direction: column;
     margin:0;
@@ -17,18 +17,20 @@
     flex-wrap: wrap;
     overflow: hidden;
     padding: 20px;
-
 }
 .employee_picture{
     position: relative;
     border-radius: 10px;
     /*box-shadow: 3px 3px 5px lightblue;*/
-    cursor: pointer;
+    /*cursor: pointer;*/
+
+
+
 
 }
-    .employee_picture img{
-        /*width: 220px;*/
-        height: 300px;
-        border-radius: 10px;
-        padding:30px;
-    }
+.employee_picture img{
+    /*width: 220px;*/
+    height: 300px;
+    border-radius: 10px;
+    padding:30px;
+}

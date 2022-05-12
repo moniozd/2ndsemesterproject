@@ -8,10 +8,7 @@ import java.time.LocalDate;
 import java.util.Date;
 
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Data
 
@@ -22,8 +19,11 @@ public class BookingModel {
 
     @Id
     private int id;
+
     private int customerId;
+
     private int motorhomeId;
+
     private int accessoriesId;
     private int price;
     private String startDate;
