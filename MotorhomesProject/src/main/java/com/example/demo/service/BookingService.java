@@ -34,9 +34,9 @@ public class BookingService {
         return bookingRepository.deleteBooking(id);
     }
 
-    public BookingModel updateBooking(int id, BookingModel booking) {
+/*    public BookingModel updateBooking(int id, BookingModel booking) {
         return bookingRepository.updateBooking(id, booking);
-    }
+    }*/
 
 
 }

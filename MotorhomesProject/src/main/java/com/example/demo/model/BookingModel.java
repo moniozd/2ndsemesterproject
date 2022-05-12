@@ -23,7 +23,6 @@ public class BookingModel {
     private int customerId;
     private int motorhomeId;
     private int accessoriesId;
-    private int price;
     private String startDate;
     private String endDate;
 

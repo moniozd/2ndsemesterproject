@@ -42,34 +42,34 @@
 <div id="customer-form-container">
     <h1 id="book-car-title">BOOK A CAR</h1>
 
-    <form action="" method="post">
-        <label for="customer">Customer:</label>
-        <select id="customer" name="customer" required>
+    <form action="/book_a_car" method="post">
+        <label for="motorhomeId">Motor Home:</label>
+        <select id="motorhomeId" name="motorhomeId" required>
+            <option value="0">Select Motor Home</option>
+            <option th:each="motorhomes : ${motorhomes}" th:value="${motorhomes.id}" th:text="${motorhomes.name}"></option>
+        </select>
+        <label for="customerId">Customer:</label>
+        <select id="customerId" name="customerId" required>
             <option value="0">Select Customer</option>
             <option th:each="customers : ${customers}"  th:value="${customers.id}" th:text="${customers.firstName}"></option>
         </select>
         <br>
-        <label for="motor_home_model">Motor Home:</label>
-        <select id="motor_home_model" name="motor_home_model" required>
-            <option value="0">Select Motor Home</option>
-            <option th:each="motorhomes : ${motorhomes}" th:value="${motorhomes.id}" th:text="${motorhomes.name}"></option>
-        </select>
        <!-- <label for="motor_home_model">quantity:</label>
         <input type="number" id="motor_home_model_quantity" name="motor_home_model" min="0" max="4" value="1">-->
         <br>
-        <label for="accessories">Accessories:</label>
-        <select id="accessories" name="accessories">
+        <label for="accessoriesId">Accessories:</label>
+        <select id="accessoriesId" name="accessoriesId">
             <option value="0">Select Accessories</option>
             <option th:each="accessories : ${accessories}" th:value="${accessories.id}" th:text="${accessories.name}"></option>
         </select>
        <!-- <label for="accessories">quantity:</label>
         <input type="number" id="accessories_quantity" name="accessories" min="0" max="4" value="1">-->
         <br>
-        <label for="startdate">Pick-up Date:</label>
-        <input type="text" id="startdate" name="startdate" placeholder="yyyy-mm-dd">
+        <label for="startDate">Pick-up Date:</label>
+        <input type="text" id="startDate" name="startDate" placeholder="yyyy-mm-dd">
         <br>
-        <label for="enddate">Drop-off Date:</label>
-        <input type="text" id="enddate" name="enddate" placeholder="yyyy-mm-dd">
+        <label for="endDate">Drop-off Date:</label>
+        <input type="text" id="endDate" name="endDate" placeholder="yyyy-mm-dd">
         <br>
         <button id="submit-button" type="submit">Add Booking</button>
     </form>

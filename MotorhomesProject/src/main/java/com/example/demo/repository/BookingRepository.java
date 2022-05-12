@@ -30,14 +30,23 @@ public class BookingRepository {
                 new BeanPropertyRowMapper<>(BookingModel.class));
     }*/
 
-    public BookingModel addBooking(BookingModel booking) {
+/*    public BookingModel addBooking(BookingModel booking) {
         String sql = "INSERT INTO bookings (customerId, motorhomeId, accessoriesId, startDate, endDate) VALUES (?, ?, ?, ?, ?);";
+        System.out.println(booking.getMotorhomeId());
         jdbcTemplate.update(sql, booking.getCustomerId(), booking.getMotorhomeId(), booking.getAccessoriesId(), booking.getStartDate(), booking.getEndDate());
         return null;
-    }
+    }*/
+public BookingModel addBooking(BookingModel booking) {
+    System.out.println(booking.getMotorhomeId() + booking.getCustomerId() +
+            booking.getAccessoriesId() + booking.getStartDate() + booking.getStartDate());
+
+    jdbcTemplate.update("CALL addBooking(?,?,?,?,?)", booking.getMotorhomeId(), booking.getCustomerId(),
+            booking.getAccessoriesId(), booking.getStartDate(), booking.getEndDate());
+    return null;
+}
 
     public BookingModel findBookingById() {
-        String sql = "SELECT id, price, customerId, accessoriesId, motorhomeId, startDate, endDate FROM bookings WHERE id = ?;";
+        String sql = "SELECT id, customerId, accessoriesId, motorhomeId, startDate, endDate FROM bookings WHERE id = ?;";
         RowMapper<BookingModel> rowMapper = new BeanPropertyRowMapper<>(BookingModel.class);
         BookingModel booking = jdbcTemplate.queryForObject(sql, rowMapper);
         return booking;
@@ -48,11 +57,11 @@ public class BookingRepository {
         return jdbcTemplate.update(sql, id) > 0;
     }
 
-    public BookingModel updateBooking(int id, BookingModel booking) {
+/*    public BookingModel updateBooking(int id, BookingModel booking) {
         String sql = "UPDATE bookings SET price = ?, customerId = ?, accessoriesId = ?, motorhomeId = ?, startDate = ?, endDate = ? WHERE id = ?;";
-        jdbcTemplate.update(sql, booking.getId(),booking.getPrice(), booking.getCustomerId(), booking.getAccessoriesId(), booking.getMotorhomeId(),
+        jdbcTemplate.update(sql, booking.getId(), booking.getCustomerId(), booking.getAccessoriesId(), booking.getMotorhomeId(),
                 booking.getStartDate(), booking.getEndDate());
         return null;
-    }
+    }*/
 
 }

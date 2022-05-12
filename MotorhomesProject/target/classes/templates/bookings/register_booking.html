@@ -59,9 +59,9 @@
         <tbody>
         <tr th:each="booking: ${bookings}">
             <td th:text="${booking.getId()}"></td>
-            <td th:text="${booking.getPrice()}"></td>
-            <td th:text="${booking.getCustomerId()}"></td>
+<!--            <td th:text="${booking.getPrice()}"></td>-->
             <td th:text="${booking.getMotorhomeId()}"></td>
+            <td th:text="${booking.getCustomerId()}"></td>
             <td th:text="${booking.getAccessoriesId()}"></td>
             <td th:text="${booking.getStartDate()}"></td>
             <td th:text="${booking.getEndDate()}"></td>

@@ -40,10 +40,10 @@ public class bookingController {
         return "bookings/edit";
     }
 
-    @PostMapping("/edit_booking")
+/*    @PostMapping("/edit_booking")
     public String edit(@ModelAttribute BookingModel booking) {
         bookingService.updateBooking(booking.getId(), booking);
         return "redirect:/";
-    }
+    }*/
 }
 

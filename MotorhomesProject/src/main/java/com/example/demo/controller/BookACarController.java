@@ -43,14 +43,14 @@ public class BookACarController {
     @PostMapping("/book_a_car")
     public String addBookACar(@ModelAttribute BookingModel bookingModel) {
 
-        CustomerModel customerModel = new CustomerModel();
+/*        CustomerModel customerModel = new CustomerModel();
         MotorhomeModel motorhomeModel = new MotorhomeModel();
         AccessoryModel accessoryModel = new AccessoryModel();
 
         bookingModel.setCustomerId(customerModel.getId());
         bookingModel.setMotorhomeId(motorhomeModel.getId());
-        bookingModel.setAccessoriesId(accessoryModel.getId());
-
+        bookingModel.setAccessoriesId(accessoryModel.getId());*/
+        //System.out.println(bookingModel.getMotorhomeId() + bookingModel.getCustomerId() + bookingModel.getAccessoriesId() + bookingModel.getStartDate() + bookingModel.getEndDate());
         bookingService.addBooking(bookingModel);
         return "redirect:/book_a_car";
     }
