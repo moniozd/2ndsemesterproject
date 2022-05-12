@@ -30,6 +30,7 @@ public class BookACarController {
 
     @GetMapping("/book_a_car")
     public String bookACarPage(Model model) {
+        model.addAttribute("bookings", bookingService.fetchAll());
         model.addAttribute("customers", customerService.fetchAll());
         model.addAttribute("motorhomes", motorhomeService.fetchAllMotorhome());
         model.addAttribute("accessories", accessoryService.fetchAll());
