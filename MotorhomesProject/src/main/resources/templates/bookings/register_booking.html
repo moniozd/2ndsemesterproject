@@ -57,7 +57,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="booking: ${bookings}" th:each="customer : ${customers}">
+        <tr th:each="booking: ${bookings}">
             <td th:text="${booking.getId()}"></td>
             <td th:text="${booking.getPrice()}"></td>
             <td th:text="${booking.getCustomerId()}"></td>
