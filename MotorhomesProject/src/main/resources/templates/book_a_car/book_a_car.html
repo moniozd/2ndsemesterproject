@@ -6,6 +6,7 @@
     <link rel="icon" href="/browser-icon.png">
     <link rel="stylesheet" href="/global.css">
     <link rel="stylesheet" href="/frontpage.css">
+    <link rel="stylesheet" href="/book_a_car.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../../static/global.css">
     <link rel="stylesheet" href="../../static/frontpage.css">
@@ -45,7 +46,7 @@
         <label for="customer">Customer:</label>
         <select id="customer" name="customer" required>
             <option value="0">Select Customer</option>
-            <option th:each="customers : ${customers}" th:value="${customers.id}" th:text="${customers.firstName}"></option>
+            <option th:each="customers : ${customers}"  th:value="${customers.id}" th:text="${customers.firstName}"></option>
         </select>
         <br>
         <label for="motor_home_model">Motor Home:</label>

@@ -34,3 +34,6 @@ LEFT JOIN motorhomes m on m.id = bookings.motorhomeId;
 
 SELECT startDate
 FROM bookings;
+
+
+SET FOREIGN_KEY_CHECKS = 0;

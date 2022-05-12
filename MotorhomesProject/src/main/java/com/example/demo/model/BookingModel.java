@@ -2,6 +2,7 @@
 package com.example.demo.model;
 
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -9,11 +10,15 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Data
 
 @Entity
 public class BookingModel {
+
+
 
     @Id
     private int id;
