@@ -1,12 +1,14 @@
 
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 
 import javax.persistence.*;
@@ -18,7 +20,6 @@ public class BookingModel {
 
     @Id
     private int id;
-    @Column(name = "customerId")
     private int customerId;
     private int motorhomeId;
     private int accessoriesId;
@@ -27,11 +28,36 @@ public class BookingModel {
     private String endDate;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "customerId")
-    private List<BookingModel> bookingModelList;
+    @JoinColumn(name = "customerId", referencedColumnName = "id")
+    @JsonManagedReference
+    private Set<CustomerModel> customerModelSet;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "motorhomeId", referencedColumnName = "id")
+    @JsonManagedReference
+    private Set<MotorhomeModel> motorhomeModelSet;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "accessoriesId", referencedColumnName = "id")
+    @JsonManagedReference
+    private Set<AccessoryModel> accessoryModelSet;
+
+/*
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(foreignKey = @ForeignKey(name = "bookings_ibfk_1"), name="motorhomeId", referencedColumnName = "id", columnDefinition = "int")
+    private MotorhomeModel motorhomeModel;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(foreignKey = @ForeignKey(name = "bookings_ibfk_2"), name="customerId", referencedColumnName = "id", columnDefinition = "int")
+    private CustomerModel customerModel;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(foreignKey = @ForeignKey(name = "bookings_ibfk_3"), name="accessoriesId", referencedColumnName = "id", columnDefinition = "int")
+    private AccessoryModel accessoryModel;
+*/
 
 
-     public BookingModel(){}
+//     public BookingModel(){}
 /*
     public BookingModel(int id, int customerId, int motorhomeId, int accessoriesId, LocalDate startDate, LocalDate endDate) {
         this.id = id;

@@ -1,11 +1,16 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Data
+@Table(name = "customers")
 @Entity
 public class CustomerModel {
 
@@ -16,13 +21,13 @@ public class CustomerModel {
     private String email;
     private int phoneNumber;
 
-    @OneToMany(cascade = CascadeType.ALL, targetEntity = BookingModel.class)
+    @JsonBackReference
+    @ManyToOne
     @JoinColumn(name = "customerId")
-    private List<BookingModel> bookingModelList;
+    private BookingModel bookingModel;
+}
 
-    public CustomerModel(List<BookingModel> bookingModelList){
-        this.bookingModelList = bookingModelList;
-    }
+/*
 
     public CustomerModel(int id, String firstName, String lastName, String email, int phoneNumber, List<BookingModel> bookingModelList) {
         this.id = id;
@@ -73,3 +78,4 @@ public class CustomerModel {
         this.phoneNumber = phoneNumber;
     }
 }
+*/

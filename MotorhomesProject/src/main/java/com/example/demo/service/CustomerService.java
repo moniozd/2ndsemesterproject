@@ -7,6 +7,7 @@ import com.example.demo.repository.CustomerRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ public class CustomerService {
     @Autowired
     CustomerRepository customerRepository;
 
+    @Transactional
     public List<CustomerModel> fetchAll() {
         return customerRepository.fetchAll();
     }

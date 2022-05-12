@@ -1,13 +1,17 @@
 
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
+
 @Table(name = "motorhomes")
 public class MotorhomeModel {
     @Id
@@ -18,9 +22,13 @@ public class MotorhomeModel {
     private boolean serviceNeeded;
     private boolean cleaningNeeded;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @JsonBackReference
+    @ManyToOne
     @JoinColumn(name = "motorhomeId")
-    private List<BookingModel> bookingModelList;
+    private BookingModel bookingModel;
+
+/*    @OneToMany(mappedBy = "motorhomeModel", cascade=CascadeType.ALL, orphanRemoval = true)
+    private Set<BookingModel> bookingModelSet = new HashSet<BookingModel>();*/
 }
 
 //public MotorhomeModel(){}

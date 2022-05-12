@@ -2,8 +2,11 @@ package com.example.demo.model;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -20,9 +23,15 @@ public class AccessoryModel {
     private String name;
     private int amount;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @JsonBackReference
+    @ManyToOne
     @JoinColumn(name = "accessoriesId")
-    private List<BookingModel> bookingModelList;
+    private BookingModel bookingModel;
+
+/*
+    @OneToMany(mappedBy = "accessoryModel", cascade=CascadeType.ALL, orphanRemoval = true)
+    private Set<BookingModel> bookingModelSet = new HashSet<BookingModel>();
+*/
 
 
     public double getRentalPriceByDays(int days) {

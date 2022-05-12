@@ -1,7 +1,10 @@
 package com.example.demo.controller;
 
 
+import com.example.demo.model.AccessoryModel;
 import com.example.demo.model.BookingModel;
+import com.example.demo.model.CustomerModel;
+import com.example.demo.model.MotorhomeModel;
 import com.example.demo.service.AccessoryService;
 import com.example.demo.service.BookingService;
 import com.example.demo.service.CustomerService;
@@ -39,6 +42,15 @@ public class BookACarController {
 
     @PostMapping("/book_a_car")
     public String addBookACar(@ModelAttribute BookingModel bookingModel) {
+
+        CustomerModel customerModel = new CustomerModel();
+        MotorhomeModel motorhomeModel = new MotorhomeModel();
+        AccessoryModel accessoryModel = new AccessoryModel();
+
+        bookingModel.setCustomerId(customerModel.getId());
+        bookingModel.setMotorhomeId(motorhomeModel.getId());
+        bookingModel.setAccessoriesId(accessoryModel.getId());
+
         bookingService.addBooking(bookingModel);
         return "redirect:/book_a_car";
     }

@@ -7,6 +7,7 @@ import com.example.demo.repository.BookingRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ public class BookingService {
     @Autowired
     BookingRepository bookingRepository;
 
+    @Transactional
     public List<BookingModel> fetchAll() {
         return bookingRepository.fetchAll();
     }
