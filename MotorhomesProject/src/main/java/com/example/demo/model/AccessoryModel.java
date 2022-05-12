@@ -11,6 +11,7 @@ import javax.persistence.*;
 
 @Data
 @Entity
+@Table(name = "accessories")
 public class AccessoryModel {
 
     @Id
@@ -19,9 +20,10 @@ public class AccessoryModel {
     private String name;
     private int amount;
 
-    @OneToMany(cascade = CascadeType.ALL, targetEntity = BookingModel.class)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "accessoriesId")
     private List<BookingModel> bookingModelList;
+
 
     public double getRentalPriceByDays(int days) {
         return (price * days);

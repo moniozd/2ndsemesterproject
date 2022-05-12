@@ -6,31 +6,33 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 
 
 import javax.persistence.*;
 
 @Data
-
+@Table(name = "bookings")
 @Entity
 public class BookingModel {
 
-
-
     @Id
     private int id;
-
+    @Column(name = "customerId")
     private int customerId;
-
     private int motorhomeId;
-
     private int accessoriesId;
     private int price;
     private String startDate;
     private String endDate;
 
-/*    public BookingModel(){}
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "customerId")
+    private List<BookingModel> bookingModelList;
 
+
+     public BookingModel(){}
+/*
     public BookingModel(int id, int customerId, int motorhomeId, int accessoriesId, LocalDate startDate, LocalDate endDate) {
         this.id = id;
         this.customerId = customerId;
