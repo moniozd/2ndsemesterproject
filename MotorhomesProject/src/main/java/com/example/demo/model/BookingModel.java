@@ -19,41 +19,13 @@ import javax.persistence.*;
 public class BookingModel {
 
     @Id
-    private int id;
-    private int customerId;
-    private int motorhomeId;
-    private int accessoriesId;
+    private long id;
+    private long motorhomeId;
+    private long customerId;
+    private long accessoriesId;
     private String startDate;
     private String endDate;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "customerId", referencedColumnName = "id")
-    @JsonManagedReference
-    private Set<CustomerModel> customerModelSet;
-
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "motorhomeId", referencedColumnName = "id")
-    @JsonManagedReference
-    private Set<MotorhomeModel> motorhomeModelSet;
-
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "accessoriesId", referencedColumnName = "id")
-    @JsonManagedReference
-    private Set<AccessoryModel> accessoryModelSet;
-
-/*
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(foreignKey = @ForeignKey(name = "bookings_ibfk_1"), name="motorhomeId", referencedColumnName = "id", columnDefinition = "int")
-    private MotorhomeModel motorhomeModel;
-
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(foreignKey = @ForeignKey(name = "bookings_ibfk_2"), name="customerId", referencedColumnName = "id", columnDefinition = "int")
-    private CustomerModel customerModel;
-
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(foreignKey = @ForeignKey(name = "bookings_ibfk_3"), name="accessoriesId", referencedColumnName = "id", columnDefinition = "int")
-    private AccessoryModel accessoryModel;
-*/
 
 
 //     public BookingModel(){}

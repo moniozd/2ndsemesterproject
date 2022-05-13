@@ -31,15 +31,15 @@ public class CustomerService {
         return customerRepository.addCustomer(customer);
     }
 
-    public CustomerModel findCustomerById(int id) {
+    public CustomerModel findCustomerById(long id) {
         return customerRepository.findCustomerById(id);
     }
 
-    public Boolean deleteCustomer(int id) {
+    public Boolean deleteCustomer(long id) {
         return customerRepository.deleteCustomer(id);
     }
 
-    public CustomerModel updateCustomer(int id, CustomerModel customer) {
+    public CustomerModel updateCustomer(long id, CustomerModel customer) {
         return customerRepository.updateCustomer(id, customer);
     }
 

@@ -48,22 +48,18 @@
             <option value="0">Select Motor Home</option>
             <option th:each="motorhomes : ${motorhomes}" th:value="${motorhomes.id}" th:text="${motorhomes.name}"></option>
         </select>
+        <br>
         <label for="customerId">Customer:</label>
         <select id="customerId" name="customerId" required>
             <option value="0">Select Customer</option>
             <option th:each="customers : ${customers}"  th:value="${customers.id}" th:text="${customers.firstName}"></option>
         </select>
         <br>
-       <!-- <label for="motor_home_model">quantity:</label>
-        <input type="number" id="motor_home_model_quantity" name="motor_home_model" min="0" max="4" value="1">-->
-        <br>
         <label for="accessoriesId">Accessories:</label>
         <select id="accessoriesId" name="accessoriesId">
             <option value="0">Select Accessories</option>
             <option th:each="accessories : ${accessories}" th:value="${accessories.id}" th:text="${accessories.name}"></option>
         </select>
-       <!-- <label for="accessories">quantity:</label>
-        <input type="number" id="accessories_quantity" name="accessories" min="0" max="4" value="1">-->
         <br>
         <label for="startDate">Pick-up Date:</label>
         <input type="text" id="startDate" name="startDate" placeholder="yyyy-mm-dd">

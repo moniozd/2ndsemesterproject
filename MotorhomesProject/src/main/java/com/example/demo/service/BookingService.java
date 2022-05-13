@@ -26,12 +26,16 @@ public class BookingService {
         return bookingRepository.addBooking(booking);
     }
 
-    public BookingModel findBookingById(int id) {
-        return bookingRepository.findBookingById();
+    public BookingModel findBookingById(long id) {
+        return bookingRepository.findBookingById(id);
     }
 
-    public Boolean deleteBooking(int id) {
+    public Boolean deleteBooking(long id) {
         return bookingRepository.deleteBooking(id);
+    }
+
+    public BookingModel updateBooking(long id, BookingModel booking) {
+        return bookingRepository.updateBooking(id, booking);
     }
 
 /*    public BookingModel updateBooking(int id, BookingModel booking) {

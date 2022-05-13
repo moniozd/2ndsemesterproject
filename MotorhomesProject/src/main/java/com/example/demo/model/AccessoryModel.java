@@ -18,15 +18,18 @@ import javax.persistence.*;
 public class AccessoryModel {
 
     @Id
-    private int id;
+    private long id;
     private double price;
     private String name;
     private int amount;
 
-    @JsonBackReference
-    @ManyToOne
-    @JoinColumn(name = "accessoriesId")
-    private BookingModel bookingModel;
+/*
+    @OneToMany(
+            cascade = CascadeType.ALL
+    )
+    @JoinColumn(name = "accessoriesId", referencedColumnName = "id")
+    private List<BookingModel> bookingModelList;
+*/
 
 /*
     @OneToMany(mappedBy = "accessoryModel", cascade=CascadeType.ALL, orphanRemoval = true)

@@ -15,20 +15,19 @@ import java.util.Set;
 @Table(name = "motorhomes")
 public class MotorhomeModel {
     @Id
-    private int id;
+    private long id;
     private String name;
     private int kilometers;
     private int numberOfBeds;
     private boolean serviceNeeded;
     private boolean cleaningNeeded;
 
-    @JsonBackReference
-    @ManyToOne
-    @JoinColumn(name = "motorhomeId")
-    private BookingModel bookingModel;
+/*    @OneToMany(
+            cascade = CascadeType.ALL
+    )
+    @JoinColumn(name = "motorhomeId", referencedColumnName = "id")
+    private List<BookingModel> bookingModelList;*/
 
-/*    @OneToMany(mappedBy = "motorhomeModel", cascade=CascadeType.ALL, orphanRemoval = true)
-    private Set<BookingModel> bookingModelSet = new HashSet<BookingModel>();*/
 }
 
 //public MotorhomeModel(){}

@@ -5,12 +5,11 @@
     <title>Edit Booking</title>
 </head>
 <body>
-<form action="/edit" method="post">
+<form action="/edit_booking" method="post">
     <input type="text" id="id" name="id" th:value="${booking.id}" readonly>
     <input type="text" id="customerId" name="" th:value="${booking.getCustomerId()}" placeholder="Customer Id">
     <input type="text" id="motorhomeId" name="" th:value="${booking.motorhomeId}" placeholder="Motorhome Id">
     <input type="text" id="accessoriesId" name="" th:value="${booking.accessoriesId}" placeholder="Accessories Id">
-    <input type="text" id="price" name="" th:value="${booking.price}" placeholder="Price">
     <input type="text" id="startDate" name="" th:value="${booking.startDate}" placeholder="Start Date">
     <input type="text" id="endDate" name="" th:value="${booking.endDate}" placeholder="End Date">
     <input type="submit" value="Save Changes">

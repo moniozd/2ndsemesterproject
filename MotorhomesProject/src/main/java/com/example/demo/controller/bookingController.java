@@ -1,7 +1,10 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.BookingModel;
+import com.example.demo.service.AccessoryService;
 import com.example.demo.service.BookingService;
+import com.example.demo.service.CustomerService;
+import com.example.demo.service.MotorhomeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,8 +19,20 @@ public class bookingController {
     @Autowired
     BookingService bookingService;
 
+    @Autowired
+    MotorhomeService motorhomeService;
+
+    @Autowired
+    CustomerService customerService;
+
+    @Autowired
+    AccessoryService accessoryService;
+
     @GetMapping("/bookings")
     public String registerBooking(Model model) {
+        model.addAttribute("customers", customerService.fetchAll());
+        model.addAttribute("motorhomes", motorhomeService.fetchAllMotorhome());
+        model.addAttribute("accessories", accessoryService.fetchAll());
         model.addAttribute("bookings", bookingService.fetchAll());
         return "bookings/register_booking";
     }
@@ -29,21 +44,21 @@ public class bookingController {
     }
 
     @GetMapping("/delete_booking/{id}")
-    public String deleteBooking(@PathVariable("id") int id) {
+    public String deleteBooking(@PathVariable("id") long id) {
         boolean deleted = bookingService.deleteBooking(id);
         return "redirect:/bookings";
     }
 
     @GetMapping("/edit_booking/{id}")
-    public String updateBooking(@PathVariable("id") int id, Model model) {
+    public String updateBooking(@PathVariable("id") long id, Model model) {
         model.addAttribute("booking", bookingService.findBookingById(id));
-        return "bookings/edit";
+        return "bookings/edit_booking";
     }
 
-/*    @PostMapping("/edit_booking")
+    @PostMapping("/edit_booking")
     public String edit(@ModelAttribute BookingModel booking) {
         bookingService.updateBooking(booking.getId(), booking);
         return "redirect:/";
-    }*/
+    }
 }
 

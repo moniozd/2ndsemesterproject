@@ -48,16 +48,16 @@
         <thead>
         <tr>
             <th>ID</th>
-            <th>Price</th>
-            <th>Customer ID</th>
+<!--            <th>Price</th>-->
             <th>Motorhome ID</th>
+            <th>Customer ID</th>
             <th>Accessories ID</th>
             <th>Start Date</th>
             <th>End Date</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="booking: ${bookings}">
+        <tr th:each="booking : ${bookings}">
             <td th:text="${booking.getId()}"></td>
 <!--            <td th:text="${booking.getPrice()}"></td>-->
             <td th:text="${booking.getMotorhomeId()}"></td>
@@ -66,10 +66,10 @@
             <td th:text="${booking.getStartDate()}"></td>
             <td th:text="${booking.getEndDate()}"></td>
             <td id="btn-column">
-                <a th:href="@{'/delete/'+${booking.id}}">
+                <a th:href="@{'/delete_booking/'+${booking.id}}">
                     <button class="btn-delete" id="btn-delete">Delete Booking</button>
                 </a>
-                <a th:href="@{'bookings/edit/'+${booking.id}}">
+                <a th:href="@{'/edit_booking/'+${booking.id}}">
                     <button class="btn-edit" id="btn-edit">Edit Booking</button>
                 </a>
             </td>

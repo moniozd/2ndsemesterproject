@@ -29,15 +29,15 @@ public class customerController {
     }
 
     @GetMapping("/delete_customer/{id}")
-    public String deleteCustomer(@PathVariable("id") int id) {
+    public String deleteCustomer(@PathVariable("id") long id) {
         boolean deleted = customerService.deleteCustomer(id);
         return "redirect:/register_customer";
     }
 
     @GetMapping("/edit_customer/{id}")
-    public String updateCustomer(@PathVariable("id") int id, Model model) {
+    public String updateCustomer(@PathVariable(value="id") long id, Model model) {
         model.addAttribute("customer", customerService.findCustomerById(id));
-        return "register_customer/edit";
+        return "register_customer/edit_customer";
     }
 
     @PostMapping("/edit_customer")

@@ -15,17 +15,20 @@ import java.util.Set;
 public class CustomerModel {
 
     @Id
-    private int id;
+    private long id;
     private String firstName;
     private String lastName;
     private String email;
     private int phoneNumber;
 
-    @JsonBackReference
-    @ManyToOne
-    @JoinColumn(name = "customerId")
-    private BookingModel bookingModel;
 }
+
+//    @OneToMany(
+//            cascade = CascadeType.ALL
+//    )
+//    @JoinColumn(name = "customerId", referencedColumnName = "id")
+//    private List<BookingModel> bookingModelList;
+
 
 /*
 

@@ -37,31 +37,28 @@ public class BookingRepository {
         return null;
     }*/
 public BookingModel addBooking(BookingModel booking) {
-    System.out.println(booking.getMotorhomeId() + booking.getCustomerId() +
-            booking.getAccessoriesId() + booking.getStartDate() + booking.getStartDate());
-
     jdbcTemplate.update("CALL addBooking(?,?,?,?,?)", booking.getMotorhomeId(), booking.getCustomerId(),
             booking.getAccessoriesId(), booking.getStartDate(), booking.getEndDate());
     return null;
 }
 
-    public BookingModel findBookingById() {
-        String sql = "SELECT id, customerId, accessoriesId, motorhomeId, startDate, endDate FROM bookings WHERE id = ?;";
+    public BookingModel findBookingById(long id) {
+        String sql = "SELECT id, motorhome_id, customer_id, accessories_id, start_date, end_date FROM bookings WHERE id = ?;";
         RowMapper<BookingModel> rowMapper = new BeanPropertyRowMapper<>(BookingModel.class);
         BookingModel booking = jdbcTemplate.queryForObject(sql, rowMapper);
         return booking;
     }
 
-    public Boolean deleteBooking(int id) {
+    public Boolean deleteBooking(long id) {
         String sql = "DELETE FROM bookings WHERE id = ?;";
         return jdbcTemplate.update(sql, id) > 0;
     }
 
-/*    public BookingModel updateBooking(int id, BookingModel booking) {
-        String sql = "UPDATE bookings SET price = ?, customerId = ?, accessoriesId = ?, motorhomeId = ?, startDate = ?, endDate = ? WHERE id = ?;";
+    public BookingModel updateBooking(long id, BookingModel booking) {
+        String sql = "UPDATE bookings SET motorhome_id = ?, customer_id = ?, accessories_id = ?,  start_date = ?, end_date = ? WHERE id = ?;";
         jdbcTemplate.update(sql, booking.getId(), booking.getCustomerId(), booking.getAccessoriesId(), booking.getMotorhomeId(),
                 booking.getStartDate(), booking.getEndDate());
         return null;
-    }*/
+    }
 
 }

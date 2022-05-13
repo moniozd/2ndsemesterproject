@@ -32,19 +32,18 @@ public class CustomerRepository {
         return null;
     }
 
-    public CustomerModel findCustomerById(int id) {
-        String sql = "SELECT id, firstName, lastName, email, phoneNumber FROM customers WHERE id = ?;";
+    public CustomerModel findCustomerById(long id) {
+        String sql = "SELECT * FROM customers WHERE id = ?;";
         RowMapper<CustomerModel> rowMapper = new BeanPropertyRowMapper<>(CustomerModel.class);
-        CustomerModel customer = jdbcTemplate.queryForObject(sql, rowMapper);
-        return customer;
+        return jdbcTemplate.queryForObject(sql, rowMapper);
     }
 
-    public Boolean deleteCustomer(int id) {
+    public Boolean deleteCustomer(long id) {
         String sql = "DELETE FROM customers WHERE id = ?;";
         return jdbcTemplate.update(sql, id) > 0;
     }
 
-    public CustomerModel updateCustomer(int id, CustomerModel customer) {
+    public CustomerModel updateCustomer(long id, CustomerModel customer) {
         String sql = "UPDATE customers SET firstName = ?, lastName = ?, email = ?, phoneNumber = ? WHERE id = ?;";
         jdbcTemplate.update(sql, customer.getId(),customer.getFirstName(), customer.getLastName(), customer.getEmail(), customer.getPhoneNumber());
         return null;
