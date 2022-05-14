@@ -25,7 +25,7 @@
                 <li class="border"><a href="/register_customer">REGISTER A CUSTOMER</a></li>
                 <li class="border"><a href="/book_a_car">BOOK A CAR</a></li>
                 <li class="border"><a href="/gallery">GALLERY</a></li>
-                <li class="border"><a href="register_booking">BOOKINGS</a></li>
+                <li class="border"><a href="/register_booking">BOOKINGS</a></li>
                 <li class="border"><a href="/mechanic">MECHANIC</a></li>
                 <!--                <li class="border"><a href="../employees/employees.html">EMPLOYEES</a></li>-->
                 <li class="search-container"> <input type="text" name="search-text" placeholder="Search..." class="search-input" /> <button class="search-button">&#x1F50D</button></li>
@@ -49,9 +49,9 @@
         <tr>
             <th>ID</th>
 <!--            <th>Price</th>-->
-            <th>Motorhome ID</th>
-            <th>Customer ID</th>
-            <th>Accessories ID</th>
+            <th>Motorhome</th>
+            <th>Customer</th>
+            <th>Accessories</th>
             <th>Start Date</th>
             <th>End Date</th>
         </tr>
@@ -60,9 +60,9 @@
         <tr th:each="booking : ${bookings}">
             <td th:text="${booking.getId()}"></td>
 <!--            <td th:text="${booking.getPrice()}"></td>-->
-            <td th:text="${booking.getMotorhomeId()}"></td>
-            <td th:text="${booking.getCustomerId()}"></td>
-            <td th:text="${booking.getAccessoriesId()}"></td>
+            <td th:text="${booking.getMotorhome()}"></td>
+            <td th:text="${booking.getCustomer()}"></td>
+            <td th:text="${booking.getAccessories()}"></td>
             <td th:text="${booking.getStartDate()}"></td>
             <td th:text="${booking.getEndDate()}"></td>
             <td id="btn-column">

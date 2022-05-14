@@ -1,6 +1,6 @@
 create table accessories
 (
-    id     bigint auto_increment
+    id     bigint(11) auto_increment
         primary key,
     name   varchar(300) null,
     price  int          not null,
@@ -8,6 +8,26 @@ create table accessories
     constraint accessory_id_uindex
         unique (id)
 );
+
+create table bookings
+(
+    id          bigint auto_increment
+        primary key,
+    motorhome   varchar(255) not null,
+    customer    varchar(255) not null,
+    accessories varchar(255) not null,
+    start_date  varchar(200) null,
+    end_date    varchar(200) null
+);
+
+create index accessoriesId
+    on bookings (accessories);
+
+create index customer_id
+    on bookings (customer);
+
+create index motorhome_id
+    on bookings (motorhome);
 
 create table customers
 (
@@ -33,36 +53,11 @@ create table motorhomes
         unique (id)
 );
 
-create table bookings
-(
-    id            int auto_increment
-        primary key,
-    motorhome_id   bigint          not null,
-    customer_id    bigint          not null,
-    accessories_id bigint          not null,
-    start_date     varchar(200) null,
-    end_date       varchar(200) null,
-    constraint bookings_ibfk_1
-        foreign key (motorhome_id) references motorhomes (id),
-    constraint bookings_ibfk_2
-        foreign key (customer_id) references customers (id),
-    constraint bookings_ibfk_3
-        foreign key (accessories_id) references accessories (id)
-);
-
-create index accessoriesId
-    on bookings (accessories_id);
-
-create index customer_id
-    on bookings (customer_id);
-
-create index motorhome_id
-    on bookings (motorhome_id);
-
 create
-    definer = bf485eb2e7ee33@`%` procedure addBooking(IN motorhome_id bigint, IN customer_id bigint, IN accessories_id bigint,
-                                                      IN start_date varchar(200), IN end_date varchar(200))
+    definer = bf485eb2e7ee33@`%` procedure addBooking(IN motorhome varchar(255), IN customer varchar(255),
+                                                      IN accessories varchar(255), IN start_date varchar(200),
+                                                      IN end_date varchar(200))
 BEGIN
-    INSERT INTO heroku_3dcaafb1b01f2cd.bookings(motorhome_id, customer_id,  accessories_id, start_date, end_date)
-    VALUES (motorhome_id, customer_id, accessories_id, start_date, end_date);
+    INSERT INTO heroku_3dcaafb1b01f2cd.bookings(motorhome, customer,  accessories, start_date, end_date)
+    VALUES (motorhome, customer, accessories, start_date, end_date);
 END;

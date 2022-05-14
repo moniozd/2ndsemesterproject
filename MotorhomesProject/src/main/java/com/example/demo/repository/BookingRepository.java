@@ -30,20 +30,21 @@ public class BookingRepository {
                 new BeanPropertyRowMapper<>(BookingModel.class));
     }*/
 
-/*    public BookingModel addBooking(BookingModel booking) {
-        String sql = "INSERT INTO bookings (customerId, motorhomeId, accessoriesId, startDate, endDate) VALUES (?, ?, ?, ?, ?);";
-        System.out.println(booking.getMotorhomeId());
-        jdbcTemplate.update(sql, booking.getCustomerId(), booking.getMotorhomeId(), booking.getAccessoriesId(), booking.getStartDate(), booking.getEndDate());
+    public BookingModel addBooking(BookingModel booking) {
+        String sql = "INSERT INTO bookings (motorhome, customer, accessories, start_date, end_date) VALUES (?, ?, ?, ?, ?);";
+        jdbcTemplate.update(sql, booking.getCustomer(), booking.getMotorhome(), booking.getAccessories(), booking.getStartDate(), booking.getEndDate());
         return null;
-    }*/
+    }
+/*
 public BookingModel addBooking(BookingModel booking) {
-    jdbcTemplate.update("CALL addBooking(?,?,?,?,?)", booking.getMotorhomeId(), booking.getCustomerId(),
-            booking.getAccessoriesId(), booking.getStartDate(), booking.getEndDate());
+    jdbcTemplate.update("CALL addBooking(?,?,?,?,?)", booking.getMotorhome(), booking.getCustomer(),
+            booking.getAccessories(), booking.getStartDate(), booking.getEndDate());
     return null;
 }
+*/
 
     public BookingModel findBookingById(long id) {
-        String sql = "SELECT id, motorhome_id, customer_id, accessories_id, start_date, end_date FROM bookings WHERE id = ?;";
+        String sql = "SELECT id, motorhome, customer, accessories, start_date, end_date FROM bookings WHERE id = ?;";
         RowMapper<BookingModel> rowMapper = new BeanPropertyRowMapper<>(BookingModel.class);
         BookingModel booking = jdbcTemplate.queryForObject(sql, rowMapper);
         return booking;
@@ -55,8 +56,8 @@ public BookingModel addBooking(BookingModel booking) {
     }
 
     public BookingModel updateBooking(long id, BookingModel booking) {
-        String sql = "UPDATE bookings SET motorhome_id = ?, customer_id = ?, accessories_id = ?,  start_date = ?, end_date = ? WHERE id = ?;";
-        jdbcTemplate.update(sql, booking.getId(), booking.getCustomerId(), booking.getAccessoriesId(), booking.getMotorhomeId(),
+        String sql = "UPDATE bookings SET motorhome = ?, customer = ?, accessories = ?,  start_date = ?, end_date = ? WHERE id = ?;";
+        jdbcTemplate.update(sql, booking.getId(), booking.getCustomer(), booking.getAccessories(), booking.getMotorhome(),
                 booking.getStartDate(), booking.getEndDate());
         return null;
     }

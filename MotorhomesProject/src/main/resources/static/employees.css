@@ -24,13 +24,11 @@ div.employees{
     /*box-shadow: 3px 3px 5px lightblue;*/
     /*cursor: pointer;*/
 
-
-
-
 }
 .employee_picture img{
     /*width: 220px;*/
     height: 300px;
-    border-radius: 10px;
+    border-radius: 50%;
     padding:30px;
+
 }

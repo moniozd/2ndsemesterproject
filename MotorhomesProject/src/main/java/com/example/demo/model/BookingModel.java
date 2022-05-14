@@ -20,9 +20,9 @@ public class BookingModel {
 
     @Id
     private long id;
-    private long motorhomeId;
-    private long customerId;
-    private long accessoriesId;
+    private String motorhome;
+    private String customer;
+    private String accessories;
     private String startDate;
     private String endDate;
 

@@ -43,7 +43,7 @@ public class BookACarController {
     @PostMapping("/book_a_car")
     public String addBookACar(@ModelAttribute BookingModel bookingModel) {
         bookingService.addBooking(bookingModel);
-        return "redirect:/book_a_car";
+        return "redirect:/bookings";
     }
 
 }
