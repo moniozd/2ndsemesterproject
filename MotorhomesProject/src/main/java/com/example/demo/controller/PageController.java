@@ -18,10 +18,7 @@ public class PageController {
         return "gallery/gallery";
     }
     
-    @GetMapping("/mechanic")
-    public String mechanicPage(Model model) {
-        return "mechanic/mechanic";
-    }
+
 
     @GetMapping("/contact")
     public String contactPage() {

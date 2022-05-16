@@ -1,13 +1,5 @@
 USE heroku_3dcaafb1b01f2cd;
 
-
-
-
-
-
-
-
-
 DELIMITER $$
 DROP PROCEDURE IF EXISTS addBooking $$
 CREATE PROCEDURE addBooking(motorhomeId int, customerId int,
@@ -57,5 +49,4 @@ FROM bookings
 SELECT start_date
 FROM bookings;
 
-
-SET FOREIGN_KEY_CHECKS = 1;
+SELECT * FROM motorhomes WHERE cleaningNeeded = 1 OR serviceNeeded = 1;

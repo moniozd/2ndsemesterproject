@@ -19,6 +19,7 @@ public class MotorhomeModel {
     private String name;
     private int kilometers;
     private int numberOfBeds;
+    private int price;
     private boolean serviceNeeded;
     private boolean cleaningNeeded;
 
