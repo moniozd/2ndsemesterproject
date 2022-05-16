@@ -32,7 +32,7 @@ public class BookingRepository {
 
     public BookingModel addBooking(BookingModel booking) {
         String sql = "INSERT INTO bookings (motorhome, customer, accessories, start_date, end_date) VALUES (?, ?, ?, ?, ?);";
-        jdbcTemplate.update(sql, booking.getCustomer(), booking.getMotorhome(), booking.getAccessories(), booking.getStartDate(), booking.getEndDate());
+        jdbcTemplate.update(sql, booking.getMotorhome(), booking.getCustomer(), booking.getAccessories(), booking.getStartDate(), booking.getEndDate());
         return null;
     }
 /*

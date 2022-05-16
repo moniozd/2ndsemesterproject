@@ -59,7 +59,6 @@
         <tbody>
         <tr th:each="booking : ${bookings}">
             <td th:text="${booking.getId()}"></td>
-<!--            <td th:text="${booking.getPrice()}"></td>-->
             <td th:text="${booking.getMotorhome()}"></td>
             <td th:text="${booking.getCustomer()}"></td>
             <td th:text="${booking.getAccessories()}"></td>
@@ -99,7 +98,7 @@
                     <a href="/contact">CONTACT</a>
                 </li>
                 <li>
-                    <a href="/map">EMPLOYEES</a>
+                    <a href="/employees">EMPLOYEES</a>
                 </li>
             </ul>
             <p class="copyright">

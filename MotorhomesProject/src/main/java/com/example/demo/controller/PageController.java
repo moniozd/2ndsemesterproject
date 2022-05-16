@@ -33,9 +33,9 @@ public class PageController {
         return "about/about";
     }
 
-    @GetMapping("/map")
-    public String mapPage() {
-        return "map/map";
+    @GetMapping("/employees")
+    public String employeePage() {
+        return "employees/employees";
     }
 
 

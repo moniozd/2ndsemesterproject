@@ -26,7 +26,7 @@ public class BookingModel {
     private String startDate;
     private String endDate;
 
-
+}
 
 //     public BookingModel(){}
 /*
@@ -105,4 +105,4 @@ public class BookingModel {
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }*/
-}
+

@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="/global.css">
     <link rel="stylesheet" href="/frontpage.css">
     <link rel="stylesheet" href="/book_a_car.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="../../static/global.css">
     <link rel="stylesheet" href="../../static/frontpage.css">
     <link rel="stylesheet" href="../../static/book_a_car.css">
@@ -27,7 +29,10 @@
                 <li class="border"><a href="/bookings">BOOKINGS</a></li>
                 <li class="border"><a href="/mechanic">MECHANIC</a></li>
                 <!--                <li class="border"><a href="../employees/employees.html">EMPLOYEES</a></li>-->
-                <li class="search-container"> <input type="text" name="search-text" placeholder="Search..." class="search-input" /> <button class="search-button">&#x1F50D</button></li>
+                <li class="search-container"><input type="text" name="search-text" placeholder="Search..."
+                                                    class="search-input"/>
+                    <button class="search-button">&#x1F50D</button>
+                </li>
             </ul>
         </div>
     </nav>
@@ -36,7 +41,8 @@
 <div id="front_page_picture_div">
     <!--    <img src="../../bc_sonic-motorhomes.jpg" alt="Picture of a motor home and two people sitting outside during night"-->
     <!--         id="front_page_picture">-->
-    <img src="https://raw.githubusercontent.com/moniozd/2ndsemesterproject/main/MotorhomesProject/src/main/resources/day_sonic_of_hero_web.jpeg" alt="Picture of a motor home and two people sitting outside during the day" id="front_page_picture_day">
+    <img src="https://raw.githubusercontent.com/moniozd/2ndsemesterproject/main/MotorhomesProject/src/main/resources/day_sonic_of_hero_web.jpeg"
+         alt="Picture of a motor home and two people sitting outside during the day" id="front_page_picture_day">
 </div>
 
 <div id="customer-form-container">
@@ -46,20 +52,24 @@
         <label for="motorhome">Motor Home:</label>
         <select id="motorhome" name="motorhome" required>
             <option value="0">Select Motor Home</option>
-            <option th:each="motorhomes : ${motorhomes}" th:value="${motorhomes.name}" th:text="${motorhomes.name}"></option>
+            <option th:each="motorhomes : ${motorhomes}" th:value="${motorhomes.name}"
+                    th:text="${motorhomes.name}"></option>
+
         </select>
 
         <br>
         <label for="customer">Customer:</label>
         <select id="customer" name="customer" required>
             <option value="0">Select Customer</option>
-            <option th:each="customers : ${customers}" th:value="${customers.firstName}" th:text="${customers.firstName}"></option>
+            <option th:each="customers : ${customers}" th:value="${customers.firstName + ' ' + customers.lastName}"
+                    th:text="${customers.firstName + ' ' + customers.lastName}"></option>
         </select>
         <br>
         <label for="accessories">Accessories:</label>
         <select id="accessories" name="accessories">
             <option value="0">Select Accessories</option>
-            <option th:each="accessories : ${accessories}" th:value="${accessories.name}" th:text="${accessories.name}"></option>
+            <option th:each="accessories : ${accessories}" th:value="${accessories.name}"
+                    th:text="${accessories.name}"></option>
         </select>
         <br>
         <label for="startDate">Pick-up Date:</label>
@@ -70,9 +80,37 @@
         <br>
         <button id="submit-button" type="submit">Add Booking</button>
     </form>
-
 </div>
 
-</script>
+<footer>
+    <div id="footer">
+
+        <section class="footer-table">
+            <div class="social">
+                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+
+            </div>
+
+            <ul class="list">
+                <li>
+                    <a href="/about">ABOUT</a>
+                </li>
+                <li>
+                    <a href="/contact">CONTACT</a>
+                </li>
+                <li>
+                    <a href="/employees">EMPLOYEES</a>
+                </li>
+            </ul>
+            <p class="copyright">
+                Motorhome Nordic @ 2022
+            </p>
+        </section>
+    </div>
+</footer>
+
 </body>
 </html>
