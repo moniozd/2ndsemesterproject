@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class bookingController {
 
+
     @Autowired
     BookingService bookingService;
 

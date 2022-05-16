@@ -48,6 +48,7 @@
             <option value="0">Select Motor Home</option>
             <option th:each="motorhomes : ${motorhomes}" th:value="${motorhomes.name}" th:text="${motorhomes.name}"></option>
         </select>
+
         <br>
         <label for="customer">Customer:</label>
         <select id="customer" name="customer" required>
