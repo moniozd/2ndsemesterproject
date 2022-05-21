@@ -50,3 +50,13 @@ SELECT start_date
 FROM bookings;
 
 SELECT * FROM motorhomes WHERE cleaningNeeded = 1 OR serviceNeeded = 1;
+SELECT serviceNeeded FROM motorhomes;
+SELECT CASE
+    WHEN serviceNeeded = 1 THEN ' yes ' ELSE ' no '
+    END
+    FROM motorhomes;
+SELECT CASE
+     WHEN cleaningNeeded = 1 THEN ' yes ' ELSE ' no '
+    END
+FROM motorhomes;
+
