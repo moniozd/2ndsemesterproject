@@ -23,14 +23,32 @@ public class MotorhomeModel {
     private boolean serviceNeeded;
     private boolean cleaningNeeded;
 
+/*    String str = String.valueOf(serviceNeeded);
+    String str2 = String.valueOf(cleaningNeeded);
+
+    private String translate(boolean b) {
+        if (serviceNeeded) {
+            str = "yes";
+        }
+        if (cleaningNeeded) {
+            str2 = "yes";
+        }
+        else {
+            str = "No";
+            str2 = "No";
+        }
+        return translate(b);
+    }*/
+
+
+}
+
+
 /*    @OneToMany(
             cascade = CascadeType.ALL
     )
     @JoinColumn(name = "motorhomeId", referencedColumnName = "id")
     private List<BookingModel> bookingModelList;*/
-
-}
-
 //public MotorhomeModel(){}
 
 //    public MotorhomeModel(int id, String name, int kilometers, int numberOfBeds, boolean serviceNeeded, boolean cleaningNeeded) {

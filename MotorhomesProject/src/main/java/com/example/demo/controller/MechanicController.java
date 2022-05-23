@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -23,9 +24,15 @@ public class MechanicController {
         return "mechanic/mechanic";
     }
 
-    @PostMapping("/mechanic")
+
+    @GetMapping("/update_service/{id}")
+    public String updateCustomer(@PathVariable(value="id") long id, Model model) {
+        model.addAttribute("motorhomes", mechanicService.findMotorhomeById(id));
+        return "register_customer/edit_customer";
+    }
+
+    @PostMapping("/update_service")
     public String updateService(@ModelAttribute MotorhomeModel motorhomeModel) {
-        mechanicService.findMotorhomeById(motorhomeModel.getId());
         mechanicService.updateService(motorhomeModel.getId(), motorhomeModel);
         return "redirect:/mechanic";
     }

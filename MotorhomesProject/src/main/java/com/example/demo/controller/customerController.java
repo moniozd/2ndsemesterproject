@@ -45,4 +45,5 @@ public class customerController {
         customerService.updateCustomer(customer.getId(), customer);
         return "redirect:/";
     }
+
 }
