@@ -98,6 +98,7 @@ header{
     display: flex;
     justify-content: flex-end;
     overflow: hidden;
+    max-height: 58px;
 }
 
 

@@ -1,4 +1,4 @@
-form {
+form#book_car {
     padding: 10px;
     display: flex;
     wrap-option: wrap;
@@ -16,7 +16,7 @@ h1#book-car-title {
     font-size: 24px;
 }
 
-input[type=text], select {
+select {
     width: 50%;
     padding: 12px 12px;
     margin: 0 auto;

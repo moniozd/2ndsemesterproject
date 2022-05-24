@@ -2,7 +2,7 @@
 /*    padding: 10px;*/
 /*}*/
 
-input[type=text] {
+input[type=text]#first_name#last_name#phoneNumber {
     width: 50%;
     padding: 12px 12px;
     margin: 8px 0;

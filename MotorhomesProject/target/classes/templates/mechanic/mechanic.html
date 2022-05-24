@@ -10,14 +10,14 @@
     <link rel="stylesheet" href="/mechanic.css">
     <link rel="stylesheet" href="/global.css">
     <link rel="stylesheet" href="/frontpage.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 <body>
 <header id="top-bar">
-    <a id="title" href="/"><h1>NORDIC<br>MOTORHOMES</h1></a>
+    <a id="title" href="/"><img
+            src="https://raw.githubusercontent.com/moniozd/2ndsemesterproject/main/MotorhomesProject/src/main/resources/logo/Small-Logo_white2.png"
+            alt="logo for Nordic Motorhomes" id="logo"></a>
     <nav>
 
         <div class="table">
@@ -30,10 +30,13 @@
                 <li class="border"><a href="register_booking">BOOKINGS</a></li>
                 <li class="border"><a href="/mechanic">MECHANIC</a></li>
                 <!--                <li class="border"><a href="../employees/employees.html">EMPLOYEES</a></li>-->
-                <li class="search-container"><input type="text" name="search-text" placeholder="Search..."
-                                                    class="search-input"/>
-                    <button class="search-button">&#x1F50D</button>
+                <li class="search-container">
+                    <form action="https://www.google.com/search" method="get">
+                        <input type="text" name="search-text" placeholder="Search..." class="search-input">
+                        <button class="search-button">&#x1F50D</button>
+                    </form>
                 </li>
+
             </ul>
         </div>
         </div>
@@ -43,8 +46,7 @@
 <div id="front_page_picture_div">
     <!--    <img src="../../bc_sonic-motorhomes.jpg" alt="Picture of a motor home and two people sitting outside during night"-->
     <!--         id="front_page_picture">-->
-    <img src="https://raw.githubusercontent.com/moniozd/2ndsemesterproject/main/MotorhomesProject/src/main/resources/day_sonic_of_hero_web.jpeg"
-         alt="Picture of a motor home and two people sitting outside during the day" id="front_page_picture_day">
+    <img src="https://raw.githubusercontent.com/moniozd/2ndsemesterproject/main/MotorhomesProject/src/main/resources/day_sonic_of_hero_web.jpeg" alt="Picture of a motor home and two people sitting outside during the day" id="front_page_picture_day">
 </div>
 
 <br>
@@ -74,10 +76,7 @@
             <td th:text="${motorhomes.isServiceNeeded()}"></td>
             <td th:text="${motorhomes.isCleaningNeeded()}"></td>
             <td id="btn-column">
-                <a th:href="@{'/update_service/'+${motorhomes.id}}">
-                    <button class="btn-update" id="btn-update">Update Service</button>
-                </a>
-
+                    <button class="btn-update" id="btn-update" type="submit">Update Service</button>
             </td>
 
         </tr>
