@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Book a car</title>
+    <link rel="icon" href="/browser-icon.png">
+    <link rel="stylesheet" href="/global.css">
+    <link rel="stylesheet" href="/frontpage.css">
+    <link rel="stylesheet" href="/book_a_car.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="../../static/global.css">
+    <link rel="stylesheet" href="../../static/frontpage.css">
+    <link rel="stylesheet" href="../../static/book_a_car.css">
+</head>
+<body>
+<header id="top-bar">
+    <a id="title" href="/"><img
+            src="https://raw.githubusercontent.com/moniozd/2ndsemesterproject/main/MotorhomesProject/src/main/resources/logo/Small-Logo_white2.png"
+            alt="logo for Nordic Motorhomes" id="logo"></a>
+    <nav>
+
+        <div class="table">
+            <ul id="nav-bar">
+                <!--                <li class="border"><a href="/">HOME</a></li>-->
+
+                <li class="border"><a href="/register_customer">REGISTER A CUSTOMER</a></li>
+                <li class="border"><a href="/book_a_car">BOOK A CAR</a></li>
+                <li class="border"><a href="/gallery">GALLERY</a></li>
+                <li class="border"><a href="/bookings">BOOKINGS</a></li>
+                <li class="border"><a href="/mechanic">MECHANIC</a></li>
+                <!--                <li class="border"><a href="../employees/employees.html">EMPLOYEES</a></li>-->
+                <li class="search-container">
+                    <form action="https://www.google.com/search" method="get">
+                        <input type="text" name="search-text" placeholder="Search..." class="search-input">
+                        <button class="search-button">&#x1F50D</button>
+                    </form>
+                </li>
+
+            </ul>
+        </div>
+        </div>
+    </nav>
+</header>
+
+<div id="front_page_picture_div">
+    <!--    <img src="../../bc_sonic-motorhomes.jpg" alt="Picture of a motor home and two people sitting outside during night"-->
+    <!--         id="front_page_picture">-->
+    <img src="https://raw.githubusercontent.com/moniozd/2ndsemesterproject/main/MotorhomesProject/src/main/resources/day_sonic_of_hero_web.jpeg"
+         alt="Picture of a motor home and two people sitting outside during the day" id="front_page_picture_day">
+</div>
+
+<div id="customer-form-container">
+    <h1 id="book-car-title">BOOK A CAR</h1>
+
+    <form id="book_car" action="/book_a_car" method="post">
+        <label for="motorhome">Motor Home:</label>
+        <select id="motorhome" name="motorhome" required>
+            <option value="0">Select Motor Home</option>
+            <option th:each="motorhomes : ${motorhomes}" th:value="${motorhomes.name}"
+                    th:text="${motorhomes.name}"></option>
+
+        </select>
+        <br>
+        <label for="customer">Customer:</label>
+        <select id="customer" name="customer" required>
+            <option value="0">Select Customer</option>
+            <option th:each="customers : ${customers}" th:value="${customers.firstName + ' ' + customers.lastName}"
+                    th:text="${customers.firstName + ' ' + customers.lastName}"></option>
+        </select>
+        <br>
+        <label for="accessories">Accessories:</label>
+        <select id="accessories" name="accessories">
+            <option value="0">Select Accessories</option>
+            <option th:each="accessories : ${accessories}" th:value="${accessories.name}"
+                    th:text="${accessories.name}"></option>
+        </select>
+        <br>
+        <label for="startDate">Pick-up Date:</label>
+        <input type="date" id="startDate" name="startDate">
+        <br>
+        <label for="endDate">Drop-off Date:</label>
+        <input type="date" id="endDate" name="endDate">
+        <br>
+        <button id="submit-button" type="submit">Add Booking</button>
+    </form>
+</div>
+
+<footer>
+    <div id="footer">
+
+        <section class="footer-table">
+            <div class="social">
+                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com"><i class="fab fa-linkedin"></i></a>
+
+            </div>
+
+            <ul class="list">
+                <li>
+                    <a href="/about">ABOUT</a>
+                </li>
+                <li>
+                    <a href="/contact">CONTACT</a>
+                </li>
+                <li>
+                    <a href="/employees">EMPLOYEES</a>
+                </li>
+            </ul>
+            <p class="copyright">
+                Motorhome Nordic @ 2022
+            </p>
+        </section>
+    </div>
+</footer>
+
+</body>
+</html>
