@@ -7,9 +7,9 @@
 <body>
 <form action="/edit_booking" method="post">
     <input type="text" id="id" name="id" th:value="${booking.id}" readonly>
-    <input type="text" id="customerId" name="" th:value="${booking.customer}" placeholder="Customer Id">
-    <input type="text" id="motorhomeId" name="" th:value="${booking.motorhome}" placeholder="Motorhome Id">
-    <input type="text" id="accessoriesId" name="" th:value="${booking.accessories}" placeholder="Accessories Id">
+    <input type="text" id="customer" name="" th:value="${booking.customer}" placeholder="Customer">
+    <input type="text" id="motorhome" name="" th:value="${booking.motorhome}" placeholder="Motorhome">
+    <input type="text" id="accessories" name="" th:value="${booking.accessories}" placeholder="Accessories">
     <input type="text" id="startDate" name="" th:value="${booking.startDate}" placeholder="Start Date">
     <input type="text" id="endDate" name="" th:value="${booking.endDate}" placeholder="End Date">
     <input type="submit" value="Save Changes">

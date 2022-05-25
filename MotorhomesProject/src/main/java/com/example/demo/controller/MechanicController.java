@@ -25,14 +25,15 @@ public class MechanicController {
     }
 
 
-    @GetMapping("/update_service/{id}")
-    public String updateCustomer(@PathVariable(value="id") long id, Model model) {
+/*    @GetMapping("/update_service/{id}")
+    public String updateService(@PathVariable(value="id") long id, Model model) {
         model.addAttribute("motorhomes", mechanicService.findMotorhomeById(id));
-        return "register_customer/edit_customer";
-    }
+        return "mechanic/update_service";
+    }*/
 
-    @PostMapping("/update_service")
-    public String updateService(@ModelAttribute MotorhomeModel motorhomeModel) {
+    @PostMapping("/mechanic")
+    public String updateService(@ModelAttribute MotorhomeModel motorhomeModel, long id, Model model) {
+        model.addAttribute("motorhome", mechanicService.findMotorhomeById(id));
         mechanicService.updateService(motorhomeModel.getId(), motorhomeModel);
         return "redirect:/mechanic";
     }

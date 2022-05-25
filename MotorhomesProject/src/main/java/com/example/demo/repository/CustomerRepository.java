@@ -35,7 +35,7 @@ public class CustomerRepository {
     public CustomerModel findCustomerById(long id) {
         String sql = "SELECT * FROM customers WHERE id = ?;";
         RowMapper<CustomerModel> rowMapper = new BeanPropertyRowMapper<>(CustomerModel.class);
-        return jdbcTemplate.queryForObject(sql, rowMapper);
+        return jdbcTemplate.queryForObject(sql, rowMapper, id);
     }
 
     public Boolean deleteCustomer(long id) {

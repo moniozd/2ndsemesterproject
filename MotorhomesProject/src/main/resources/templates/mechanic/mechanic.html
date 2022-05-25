@@ -67,18 +67,21 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="motorhomes : ${motorhomes}">
-            <td th:text="${motorhomes.getId()}"></td>
-            <td th:text="${motorhomes.getName()}"></td>
-            <td th:text="${motorhomes.getNumberOfBeds()}"></td>
-            <td th:text="${motorhomes.getPrice()}"></td>
-            <td th:text="${motorhomes.getKilometers()}"></td>
-            <td th:if="${motorhomes.isServiceNeeded() == true}">Yes</td>
-            <td th:if="${motorhomes.isServiceNeeded() == false}">No</td>
-            <td th:if="${motorhomes.isCleaningNeeded() == true}">Yes</td>
-            <td th:if="${motorhomes.isCleaningNeeded() == false}">No</td>
+        <tr th:each="motorhome : ${motorhomes}">
+            <td th:text="${motorhome.getId()}"></td>
+            <td th:text="${motorhome.getName()}"></td>
+            <td th:text="${motorhome.getNumberOfBeds()}"></td>
+            <td th:text="${motorhome.getPrice()}"></td>
+            <td th:text="${motorhome.getKilometers()}"></td>
+            <td th:if="${motorhome.isServiceNeeded() == true}">Yes</td>
+            <td th:if="${motorhome.isServiceNeeded() == false}">No</td>
+            <td th:if="${motorhome.isCleaningNeeded() == true}">Yes</td>
+            <td th:if="${motorhome.isCleaningNeeded() == false}">No</td>
             <td id="btn-column">
+                <a th:href="@{'/mechanic/'}">
                     <button class="btn-update" id="btn-update" type="submit">Update Service</button>
+                </a>
+
             </td>
 
         </tr>
