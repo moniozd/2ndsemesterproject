@@ -12,6 +12,7 @@ import java.util.List;
 @Repository
 public class BookingRepository {
 
+    //dependency injection of JdbcTemplate to run SQL-queries
     @Autowired
     JdbcTemplate jdbcTemplate;
 
