@@ -58,7 +58,7 @@ public class bookingController {
     @PostMapping("/edit_booking")
     public String edit(@ModelAttribute BookingModel booking) {
         bookingService.updateBooking(booking.getId(), booking);
-        return "redirect:/";
+        return "redirect:/bookings";
     }
 }
 

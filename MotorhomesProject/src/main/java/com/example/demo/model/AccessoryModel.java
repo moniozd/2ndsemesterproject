@@ -12,11 +12,14 @@ import lombok.Data;
 import javax.persistence.*;
 
 
+// @Data handles all boilerplate code like getters, setters etc.
 @Data
+// @Entity is for classes that represent a table in the database
 @Entity
 @Table(name = "accessories")
 public class AccessoryModel {
 
+    // @Id is for the primary key for the table
     @Id
     private long id;
     private double price;
@@ -37,11 +40,11 @@ public class AccessoryModel {
 */
 
 
-    public double getRentalPriceByDays(int days) {
+/*    public double getRentalPriceByDays(int days) {
         return (price * days);
     }
 
     public double getRentalPriceByDays(LocalDate startDate, LocalDate endDate) {
         return getRentalPriceByDays((int) ChronoUnit.DAYS.between(startDate, endDate));
-    }
+    }*/
 }

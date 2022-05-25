@@ -43,7 +43,7 @@ public class customerController {
     @PostMapping("/edit_customer")
     public String editCustomer(@ModelAttribute CustomerModel customer) {
         customerService.updateCustomer(customer.getId(), customer);
-        return "redirect:/";
+        return "redirect:/register_customer";
     }
 
 }

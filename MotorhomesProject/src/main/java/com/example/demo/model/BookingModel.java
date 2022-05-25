@@ -13,11 +13,14 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+// @Data handles all boilerplate code like getters, setters etc.
 @Data
 @Table(name = "bookings")
+// @Entity is for classes that represent a table in the database
 @Entity
 public class BookingModel {
 
+    // @Id is for the primary key for the table
     @Id
     private long id;
     private String motorhome;

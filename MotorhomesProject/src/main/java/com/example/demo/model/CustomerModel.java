@@ -9,11 +9,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+// @Data handles all boilerplate code like getters, setters etc.
 @Data
 @Table(name = "customers")
+// @Entity is for classes that represent a table in the database
 @Entity
 public class CustomerModel {
 
+    // @Id is for the primary key for the table
     @Id
     private long id;
     private String firstName;
