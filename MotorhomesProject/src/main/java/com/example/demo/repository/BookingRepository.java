@@ -1,3 +1,4 @@
+//Authors: team
 package com.example.demo.repository;
 
 import com.example.demo.model.BookingModel;
@@ -12,10 +13,11 @@ import java.util.List;
 @Repository
 public class BookingRepository {
 
-    //dependency injection of JdbcTemplate to run SQL-queries
+//    dependency injection of JdbcTemplate to run SQL-queries
     @Autowired
     JdbcTemplate jdbcTemplate;
 
+//    retreive the booking id from "bookings" table
     public List<BookingModel> fetchAll(){
         return jdbcTemplate.query("SELECT * FROM bookings;",
                 new BeanPropertyRowMapper<>(BookingModel.class));
@@ -31,6 +33,7 @@ public class BookingRepository {
                 new BeanPropertyRowMapper<>(BookingModel.class));
     }*/
 
+//    add a new booking with id(auto-increments)
     public BookingModel addBooking(BookingModel booking) {
         String sql = "INSERT INTO bookings (motorhome, customer, accessories, start_date, end_date) VALUES (?, ?, ?, ?, ?);";
         jdbcTemplate.update(sql, booking.getMotorhome(), booking.getCustomer(), booking.getAccessories(), booking.getStartDate(), booking.getEndDate());
@@ -43,7 +46,7 @@ public BookingModel addBooking(BookingModel booking) {
     return null;
 }
 */
-
+//  find and show booking information via booking id
     public BookingModel findBookingById(long id) {
         String sql = "SELECT id, motorhome, customer, accessories, start_date, end_date FROM bookings WHERE id = ?;";
         RowMapper<BookingModel> rowMapper = new BeanPropertyRowMapper<>(BookingModel.class);
@@ -51,11 +54,14 @@ public BookingModel addBooking(BookingModel booking) {
         return booking;
     }
 
+//    delete a booking via booking id
     public Boolean deleteBooking(long id) {
         String sql = "DELETE FROM bookings WHERE id = ?;";
         return jdbcTemplate.update(sql, id) > 0;
     }
 
+
+//    find and edit a booking information via booking id
     public BookingModel updateBooking(long id, BookingModel booking) {
         String sql = "UPDATE bookings SET motorhome = ?, customer = ?, accessories = ?,  start_date = ?, end_date = ? WHERE id = ?;";
         jdbcTemplate.update(sql, booking.getId(), booking.getCustomer(), booking.getAccessories(), booking.getMotorhome(),
