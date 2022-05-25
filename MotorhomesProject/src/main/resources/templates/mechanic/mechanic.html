@@ -73,8 +73,10 @@
             <td th:text="${motorhomes.getNumberOfBeds()}"></td>
             <td th:text="${motorhomes.getPrice()}"></td>
             <td th:text="${motorhomes.getKilometers()}"></td>
-            <td th:text="${motorhomes.isServiceNeeded()}"></td>
-            <td th:text="${motorhomes.isCleaningNeeded()}"></td>
+            <td th:if="${motorhomes.isServiceNeeded() == true}">Yes</td>
+            <td th:if="${motorhomes.isServiceNeeded() == false}">No</td>
+            <td th:if="${motorhomes.isCleaningNeeded() == true}">Yes</td>
+            <td th:if="${motorhomes.isCleaningNeeded() == false}">No</td>
             <td id="btn-column">
                     <button class="btn-update" id="btn-update" type="submit">Update Service</button>
             </td>

@@ -46,7 +46,7 @@ public BookingModel addBooking(BookingModel booking) {
     public BookingModel findBookingById(long id) {
         String sql = "SELECT id, motorhome, customer, accessories, start_date, end_date FROM bookings WHERE id = ?;";
         RowMapper<BookingModel> rowMapper = new BeanPropertyRowMapper<>(BookingModel.class);
-        BookingModel booking = jdbcTemplate.queryForObject(sql, rowMapper);
+        BookingModel booking = jdbcTemplate.queryForObject(sql, rowMapper, id);
         return booking;
     }
 

@@ -31,7 +31,7 @@ public class MechanicRepository {
     public MotorhomeModel findMotorhomeById(long id) {
         String sql = "SELECT * FROM motorhomes WHERE id = ?;";
         RowMapper<MotorhomeModel> rowMapper = new BeanPropertyRowMapper<>(MotorhomeModel.class);
-        return jdbcTemplate.queryForObject(sql, rowMapper);
+        return jdbcTemplate.queryForObject(sql, rowMapper, id);
     }
 
 }
