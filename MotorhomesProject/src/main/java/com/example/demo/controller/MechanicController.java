@@ -1,3 +1,4 @@
+//Authors: team
 package com.example.demo.controller;
 
 import com.example.demo.model.CustomerModel;
@@ -14,9 +15,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class MechanicController {
 
+//    dependency injection to use mechanicService class
     @Autowired
     MechanicService mechanicService;
 
+//  get the mapping for mechanic page
+//    fetchAll displays the information from the mechanic table
 
     @GetMapping("/mechanic")
     public String mechanicPage(Model model) {
@@ -31,6 +35,7 @@ public class MechanicController {
         return "mechanic/update_service";
     }*/
 
+//    from updateService page - posts the edited motorhome into the table
     @PostMapping("/mechanic")
     public String updateService(@ModelAttribute MotorhomeModel motorhomeModel, long id, Model model) {
         model.addAttribute("motorhome", mechanicService.findMotorhomeById(id));

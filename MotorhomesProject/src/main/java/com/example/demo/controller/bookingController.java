@@ -21,7 +21,7 @@ public class bookingController {
     @Autowired
     BookingService bookingService;
 
-    //dependency injection to use motorgomeService class
+    //dependency injection to use motorhomeService class
     @Autowired
     MotorhomeService motorhomeService;
 

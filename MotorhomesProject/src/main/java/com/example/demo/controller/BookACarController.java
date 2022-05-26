@@ -20,18 +20,24 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class BookACarController {
 
+    //dependency injection to use bookingService class
     @Autowired
     BookingService bookingService;
 
+    //dependency injection to use customerService class
     @Autowired
     CustomerService customerService;
 
+    //dependency injection to use motorhomeService class
     @Autowired
     MotorhomeService motorhomeService;
 
+    //dependency injection to use accessoryService class
     @Autowired
     AccessoryService accessoryService;
 
+//    get the mapping for book a car page
+//    @fetchall - displays the information from the tables
     @GetMapping("/book_a_car")
     public String bookACarPage(Model model) {
         model.addAttribute("bookings", bookingService.fetchAll());
@@ -41,6 +47,7 @@ public class BookACarController {
         return "book_a_car/book_a_car";
     }
 
+//    from book a car page - posts the new booking into the table
     @PostMapping("/book_a_car")
     public String addBookACar(@ModelAttribute BookingModel bookingModel) {
         bookingService.addBooking(bookingModel);
