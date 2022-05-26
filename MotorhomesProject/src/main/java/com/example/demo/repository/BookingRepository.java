@@ -17,7 +17,7 @@ public class BookingRepository {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-//    retreive the booking id from "bookings" table
+//    retrieve everything the from "bookings" table
     public List<BookingModel> fetchAll(){
         return jdbcTemplate.query("SELECT * FROM bookings;",
                 new BeanPropertyRowMapper<>(BookingModel.class));

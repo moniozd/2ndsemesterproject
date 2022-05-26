@@ -1,3 +1,4 @@
+//Authors: team
 package com.example.demo.repository;
 
 
@@ -15,11 +16,14 @@ public class AccessoryRepository {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
+
+    // Calls the database via the JdbcTemplate and uses a Select statement to display everything from the accessories table
     public List<AccessoryModel> fetchAllAccessories(){
         return jdbcTemplate.query("SELECT * FROM accessories;",
                 new BeanPropertyRowMapper<>(AccessoryModel.class));
     }
 
+    // Calls the database via the JdbcTemplate and uses a Select statement to display id and name from the accessories table
     public List<AccessoryModel> fetchIdAndName(){
         return jdbcTemplate.query("SELECT id, name FROM accessories;",
                 new BeanPropertyRowMapper<>(AccessoryModel.class));

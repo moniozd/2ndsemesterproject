@@ -1,3 +1,4 @@
+//Authors: team
 package com.example.demo.repository;
 
 
@@ -13,14 +14,18 @@ import java.util.List;
 @Repository
 public class MotorhomeRepository {
 
+
+    //    dependency injection of JdbcTemplate to run SQL-queries
     @Autowired
     JdbcTemplate jdbcTemplate;
 
+    //    retrieve everything the from "bookings" table
     public List<MotorhomeModel> fetchAllMotorhome(){
         return jdbcTemplate.query("SELECT * FROM motorhomes;",
                 new BeanPropertyRowMapper<>(MotorhomeModel.class));
     }
 
+    // Retrieve name and id from motorhome table
     public List<MotorhomeModel> fetchIdAndName(){
         return jdbcTemplate.query("SELECT id, name FROM motorhomes;",
                 new BeanPropertyRowMapper<>(MotorhomeModel.class));

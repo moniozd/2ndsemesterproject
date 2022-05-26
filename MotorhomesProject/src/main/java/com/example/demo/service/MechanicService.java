@@ -24,7 +24,7 @@ public class MechanicService {
         return mechanicRepository.fetchAll();
     }
 
-    public CustomerModel updateService(long id, MotorhomeModel motorhomeModel) {
+    public MotorhomeModel updateService(long id, MotorhomeModel motorhomeModel) {
         return mechanicRepository.updateService(id, motorhomeModel);
     }
 
