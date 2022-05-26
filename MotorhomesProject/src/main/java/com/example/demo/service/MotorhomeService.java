@@ -16,6 +16,8 @@ public class MotorhomeService {
     @Autowired
     MotorhomeRepository motorhomeRepository;
 
+    //Accesses the motorhome repository's fetchAll
+    // @Transactional makes it so, it only runs if it completes the whole query
     @Transactional
     public List<MotorhomeModel> fetchAllMotorhome() {
         return motorhomeRepository.fetchAllMotorhome();

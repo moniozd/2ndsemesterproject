@@ -14,9 +14,12 @@ import java.util.List;
 @Service
 public class BookingService {
 
+    // @Autowired 'creates' an object of the class. This is used to 'connect' the different layers in the application.
     @Autowired
     BookingRepository bookingRepository;
 
+    //Accesses the accessory repository's fetchAll, addBooking, findBookingById, deleteBooking and updateBooking method
+    // @Transactional makes it so, it only runs if it completes the whole query
     @Transactional
     public List<BookingModel> fetchAll() {
         return bookingRepository.fetchAll();

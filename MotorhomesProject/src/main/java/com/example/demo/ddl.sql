@@ -60,3 +60,4 @@ SELECT CASE
     END
 FROM motorhomes;
 
+UPDATE customers SET phoneNumber = 31233333 WHERE id = 61;

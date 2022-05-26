@@ -14,9 +14,12 @@ import java.util.List;
 @Service
 public class CustomerService {
 
+    // @Autowired 'creates' an object of the class. This is used to 'connect' the different layers in the application.
     @Autowired
     CustomerRepository customerRepository;
 
+    //Accesses the customer repository's fetchAll, addCustomer, findCustomerById, deleteCustomer and updateCustomer method
+    // @Transactional makes it so, it only runs if it completes the whole query
     @Transactional
     public List<CustomerModel> fetchAll() {
         return customerRepository.fetchAll();

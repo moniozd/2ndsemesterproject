@@ -13,8 +13,12 @@ import java.util.List;
 @Service
 public class MechanicService {
 
+    // @Autowired 'creates' an object of the class. This is used to 'connect' the different layers in the application.
     @Autowired
     MechanicRepository mechanicRepository;
+
+
+    //Accesses the mechanic repository's fetchAll, updateService, findMotorhomeById
 
     public List<MotorhomeModel> fetchAll() {
         return mechanicRepository.fetchAll();
