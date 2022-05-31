@@ -1,3 +1,5 @@
+-- // Author: Team
+
 create table accessories
 (
     id     bigint(11) auto_increment

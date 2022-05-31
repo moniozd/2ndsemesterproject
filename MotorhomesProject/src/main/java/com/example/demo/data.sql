@@ -1,3 +1,5 @@
+-- Author: Team
+
 USE heroku_3dcaafb1b01f2cd;
 
 INSERT INTO accessories (name, price, amount)
